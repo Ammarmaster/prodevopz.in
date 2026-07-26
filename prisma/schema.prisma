@@ -1,0 +1,134 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+model Student {
+  id                   String           @id @default(cuid())
+  name                 String
+  email                String           @unique
+  phone                String
+  college              String
+  domain               String           // Web Development, Frontend, AI, Backend, Cyber Security, etc.
+  duration             String           // 1 Month, 2 Months, 3 Months, 6 Months
+  linkedin             String?
+  github               String?
+  portfolio            String?
+  resumeUrl            String?
+  paymentStatus        String           @default("PENDING") // PENDING, COMPLETED
+  amountPaid           Float            @default(0.0)
+  paymentId            String?
+  invoiceId            String?
+  qrCode               String?          // QR data URI containing verification URL
+  offerLetterUrl       String?
+  internshipId         String?          @unique // e.g., PRODEV-WEB-10023
+  status               String           @default("REGISTERED") // REGISTERED, ACTIVE, SUBMITTED, COMPLETED, DROPPED
+  rating               Int?
+  feedback             String?
+  performanceScore     Float?
+  startDate            DateTime?
+  endDate              DateTime?
+  certificateId        String?          @unique
+  certificateUrl       String?
+  lorUrl               String?          // Letter of Recommendation URL
+  tasksCompletedCount  Int              @default(0)
+  createdAt            DateTime         @default(now())
+  submissions          TaskSubmission[]
+}
+
+model Task {
+  id            String           @id @default(cuid())
+  title         String
+  description   String
+  domain        String           // Matches Student domain
+  dayNumber     Int              // e.g., 1 (Day 1), 2 (Day 2)
+  resourceLinks String?          // JSON list of resource links
+  submissions   TaskSubmission[]
+}
+
+model TaskSubmission {
+  id               String   @id @default(cuid())
+  studentId        String
+  student          Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  taskId           String
+  task             Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  completionLink   String   // Link submitted by student
+  followTaskCheck  Boolean  @default(false) // followed prodevopz.in on IG & prodevopz on LinkedIn
+  comment          String?
+  status           String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  score            Float?
+  mentorFeedback   String?
+  submittedAt      DateTime @default(now())
+}
+
+model Blog {
+  id           String   @id @default(cuid())
+  title        String
+  slug         String   @unique
+  category     String
+  content      String
+  readingTime  String
+  author       String   @default("ProDevOpz AI")
+  authorImage  String?
+  bannerImage  String?
+  published    Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+model ContactQuery {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  service   String?
+  message   String
+  status    String   @default("NEW") // NEW, IN_PROGRESS, RESOLVED
+  createdAt DateTime @default(now())
+}
+
+model Client {
+  id           String          @id @default(cuid())
+  name         String
+  email        String          @unique
+  companyName  String?
+  passwordHash String          @default("client123")
+  projects     ClientProject[]
+  invoices     ClientInvoice[]
+}
+
+model ClientProject {
+  id            String    @id @default(cuid())
+  clientId      String
+  client        Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  title         String
+  description   String
+  status        String    @default("PLANNING") // PLANNING, DEVELOPMENT, TESTING, COMPLETED
+  progress      Float     @default(0.0)
+  repoUrl       String?
+  meetingLink   String?
+  nextMilestone String?
+  deadline      DateTime?
+  createdAt     DateTime  @default(now())
+}
+
+model ClientInvoice {
+  id            String   @id @default(cuid())
+  clientId      String
+  client        Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  invoiceNumber String   @unique
+  amount        Float
+  dueDate       DateTime
+  status        String   @default("UNPAID") // UNPAID, PAID, OVERDUE
+  pdfUrl        String?
+  createdAt     DateTime @default(now())
+}
+
+model OtpVerification {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  code      String
+  createdAt DateTime @default(now())
+}
