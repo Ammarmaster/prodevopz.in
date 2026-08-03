@@ -4,14 +4,13 @@ import fs from "fs";
 import path from "path";
 import QRCode from "qrcode";
 
-// SMTP Transporter using contactprodevopz@gmail.com and Gmail App Password
 export const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
-    user: "contactprodevopz@gmail.com",
-    pass: "ydqm zvap zecd xsql",
+    user: process.env.SMTP_USER || "contactprodevopz@gmail.com",
+    pass: process.env.SMTP_PASS || "ydqm zvap zecd xsql",
   },
 });
 

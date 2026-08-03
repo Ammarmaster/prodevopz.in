@@ -25,8 +25,9 @@ export const dynamic = "force-dynamic";
 export default async function AdminDashboard() {
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
+  const sessionSecret = process.env.ADMIN_SESSION_SECRET || "authenticated_ammar_cohort";
 
-  if (!session || session.value !== "authenticated_ammar_cohort") {
+  if (!session || session.value !== sessionSecret) {
     redirect("/admin/login");
   }
 

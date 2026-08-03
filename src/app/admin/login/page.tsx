@@ -15,10 +15,13 @@ export default async function AdminLoginPage({ searchParams }: Props) {
     const email = (formData.get("email") as string || "").trim();
     const password = (formData.get("password") as string || "").trim();
 
-    // Credentials: admin@prodevopz.in / AmmarAdmin@786
-    if (email === "admin@prodevopz.in" && password === "AmmarAdmin@786") {
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@prodevopz.in";
+    const adminPassword = process.env.ADMIN_PASSWORD || "AmmarAdmin@786";
+
+    if (email === adminEmail && password === adminPassword) {
       const cookieStore = await cookies();
-      cookieStore.set("admin_session", "authenticated_ammar_cohort", {
+      const sessionSecret = process.env.ADMIN_SESSION_SECRET || "authenticated_ammar_cohort";
+      cookieStore.set("admin_session", sessionSecret, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 60 * 60 * 12, // 12 hours session

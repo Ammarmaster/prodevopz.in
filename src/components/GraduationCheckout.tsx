@@ -56,7 +56,7 @@ export default function GraduationCheckout({ studentId, studentName, studentEmai
     await sleep(400);
 
     const options = {
-      key: "rzp_test_TCXL3cWODA4EGZ",
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_TCXL3cWODA4EGZ",
       amount: orderRes.amount,
       currency: "INR",
       name: "ProDevOpz Technologies",

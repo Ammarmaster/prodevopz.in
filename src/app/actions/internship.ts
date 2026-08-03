@@ -220,8 +220,17 @@ export async function submitTask(
 }
 
 // 6. Update Student Status / Approve Submissions (Admin Panel actions)
+import { cookies } from "next/headers";
+
 export async function approveSubmission(submissionId: string, mentorFeedback?: string) {
   try {
+    const cookieStore = await cookies();
+    const session = cookieStore.get("admin_session");
+    const sessionSecret = process.env.ADMIN_SESSION_SECRET || "authenticated_ammar_cohort";
+    if (!session || session.value !== sessionSecret) {
+      return { success: false, error: "Unauthorized admin request." };
+    }
+
     const submission = await db.taskSubmission.update({
       where: { id: submissionId },
       data: {
@@ -256,6 +265,13 @@ export async function approveSubmission(submissionId: string, mentorFeedback?: s
 
 export async function rejectSubmission(submissionId: string, mentorFeedback: string) {
   try {
+    const cookieStore = await cookies();
+    const session = cookieStore.get("admin_session");
+    const sessionSecret = process.env.ADMIN_SESSION_SECRET || "authenticated_ammar_cohort";
+    if (!session || session.value !== sessionSecret) {
+      return { success: false, error: "Unauthorized admin request." };
+    }
+
     await db.taskSubmission.update({
       where: { id: submissionId },
       data: {
@@ -302,8 +318,8 @@ import Razorpay from "razorpay";
 import crypto from "crypto";
 
 const razorpay = new Razorpay({
-  key_id: "rzp_test_TCXL3cWODA4EGZ",
-  key_secret: "mwTxyjhTepqXJoHXfOHr2c66",
+  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_TCXL3cWODA4EGZ",
+  key_secret: process.env.RAZORPAY_KEY_SECRET || "mwTxyjhTepqXJoHXfOHr2c66",
 });
 
 // A. Create Razorpay Order (₹200)
@@ -340,8 +356,9 @@ export async function verifyRazorpayPaymentAction(
   try {
     // Verify HMAC SHA256 signature
     const body = orderId + "|" + paymentId;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET || "mwTxyjhTepqXJoHXfOHr2c66";
     const expectedSignature = crypto
-      .createHmac("sha256", "mwTxyjhTepqXJoHXfOHr2c66")
+      .createHmac("sha256", keySecret)
       .update(body.toString())
       .digest("hex");
 
