@@ -1,17 +1,18 @@
 import { PrismaClient } from "../generated/client";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
 const createPrismaClient = () => {
-  // Use database URL from env or fallback to local path
-  const dbUrl = process.env.DATABASE_URL || "file:prisma/dev.db";
-  
-  // Initialize adapter with connection options
-  const adapter = new PrismaBetterSqlite3({ url: dbUrl });
-  
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error("DATABASE_URL environment variable is missing.");
+  }
+  const pool = new Pool({ connectionString });
+  const adapter = new PrismaPg(pool);
   return new PrismaClient({ adapter });
 };
 

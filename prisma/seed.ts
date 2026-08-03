@@ -1,15 +1,14 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/client";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
-import path from "path";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
-let dbPath = "dev.db";
 const databaseUrl = process.env.DATABASE_URL;
-if (databaseUrl && databaseUrl.startsWith("file:")) {
-  dbPath = databaseUrl.replace("file:", "");
+if (!databaseUrl) {
+  throw new Error("DATABASE_URL connection string is missing.");
 }
-const absDbPath = path.resolve(process.cwd(), dbPath);
-const adapter = new PrismaBetterSqlite3({ url: `file:${absDbPath}` });
+const pool = new Pool({ connectionString: databaseUrl });
+const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
