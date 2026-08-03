@@ -66,12 +66,15 @@ export default async function LORPage({ searchParams }: Props) {
             <span className="text-[9px] text-neutral-400 mt-1 font-semibold">prodevopz.in</span>
           </div>
 
-          <div className="text-right flex flex-col gap-1.5 text-[9px] text-neutral-500 font-medium">
+          <div className="text-right flex flex-col gap-1.5 text-[9px] text-neutral-500 font-medium items-end">
             <span className="font-extrabold text-[11px] text-neutral-900 tracking-wide uppercase">ProDevOpz Technologies India</span>
-            <span className="bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded font-bold inline-block text-right self-end border border-neutral-200">
-              Registration: UDYAM-KR-03-0058472
-            </span>
-            <span>contactprodevopz@gmail.com</span>
+            <div className="flex gap-2 items-center mt-1">
+              <img src="/msme.png" alt="MSME Logo" className="h-6 object-contain" />
+              <span className="bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded font-bold border border-neutral-200">
+                UDYAM-KR-03-0058472
+              </span>
+            </div>
+            <span className="mt-1">contactprodevopz@gmail.com</span>
             <span>Bengaluru, Karnataka, India</span>
           </div>
         </div>
@@ -99,7 +102,7 @@ export default async function LORPage({ searchParams }: Props) {
             </p>
 
             <p className="mt-3">
-              Specifically, {student.name} excelled at modular coding practices, documentation standards, and adapting quickly to modern software tools. They maintained an exceptional work ethic, delivering clean components that achieved an overall mentor evaluation score of <b className="text-neutral-950">{ratingStr}</b>.
+              Specifically, {student.name} excelled at modular coding practices, documentation standards, and adapting to modern software tools. They maintained an exceptional work ethic, delivering clean components that achieved an overall mentor evaluation score of <b className="text-neutral-950">{ratingStr}</b>.
             </p>
 
             {student.feedback && (

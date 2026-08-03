@@ -76,6 +76,29 @@ export default async function CertificatePage({ searchParams }: Props) {
       {/* Google Fonts for Cursive Signature */}
       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 
+      {/* Direct CSS Print Directives to lock styling inside Saved PDFs */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @media print {
+          body, html {
+            background: #ffffff !important;
+            color: #262626 !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          #certificate-print {
+            border: 8px double #d97706 !important;
+            background-color: #fdfdfd !important;
+            color: #262626 !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1.414/1 !important;
+          }
+        }
+      `}} />
+
       {/* Print Controls (Hidden on print) */}
       <div className="w-full max-w-5xl flex items-center justify-between glass-panel p-4 border-white/5 print:hidden">
         <div className="flex flex-col text-left">
@@ -112,11 +135,7 @@ export default async function CertificatePage({ searchParams }: Props) {
 
           {/* MSME & ISO badges */}
           <div className="flex gap-4 items-center">
-            {/* MSME Official Badge Representation */}
-            <div className="flex items-center gap-1.5 border border-amber-600/20 bg-amber-500/5 px-2.5 py-1 rounded text-[8px] text-amber-700 font-bold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse" />
-              MSME Registered
-            </div>
+            <img src="/msme.png" alt="MSME Certified" className="h-9 object-contain" />
             <div className="flex items-center gap-1.5 border border-amber-600/20 bg-amber-500/5 px-2.5 py-1 rounded text-[8px] text-amber-700 font-bold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
               ISO 9001:2015

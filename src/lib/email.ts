@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer";
 import { jsPDF } from "jspdf";
+import fs from "fs";
+import path from "path";
+import QRCode from "qrcode";
 
 // SMTP Transporter using contactprodevopz@gmail.com and Gmail App Password
 export const transporter = nodemailer.createTransport({
@@ -11,6 +14,29 @@ export const transporter = nodemailer.createTransport({
     pass: "ydqm zvap zecd xsql",
   },
 });
+
+// Helper functions to safely convert images to base64 data URLs on the server
+const getLogoDataUrl = () => {
+  try {
+    const logoPath = path.join(process.cwd(), "public", "logo.jpg");
+    const logoBase64 = fs.readFileSync(logoPath, { encoding: "base64" });
+    return `data:image/jpeg;base64,${logoBase64}`;
+  } catch (err) {
+    console.error("Error reading logo.jpg:", err);
+    return null;
+  }
+};
+
+const getMsmeDataUrl = () => {
+  try {
+    const msmePath = path.join(process.cwd(), "public", "msme.png");
+    const msmeBase64 = fs.readFileSync(msmePath, { encoding: "base64" });
+    return `data:image/png;base64,${msmeBase64}`;
+  } catch (err) {
+    console.error("Error reading msme.png:", err);
+    return null;
+  }
+};
 
 // ==========================================
 // 1. PDF GENERATORS (Server-Side using jsPDF)
@@ -25,21 +51,33 @@ export function generateOfferLetterPdf(
 ): Buffer {
   const doc = new jsPDF();
   
-  // Header logo & text
+  // Header logo image & text
+  const logoData = getLogoDataUrl();
+  if (logoData) {
+    doc.addImage(logoData, "JPEG", 20, 15, 10, 10);
+  }
+  
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(20, 20, 20);
-  doc.text("ProDevOpz Technologies", 20, 25);
+  doc.text("ProDevOpz Technologies", 32, 23);
   
-  doc.setFontSize(9);
+  doc.setFontSize(8.5);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Intelligent Software Engineering | prodevopz.in", 20, 31);
-  doc.text("Email: contactprodevopz@gmail.com | Registered MSME Enterprise", 20, 36);
+  doc.text("Intelligent Software Engineering | prodevopz.in", 32, 28);
+  
+  // MSME logo in top right
+  const msmeData = getMsmeDataUrl();
+  if (msmeData) {
+    doc.addImage(msmeData, "PNG", 155, 15, 18, 9);
+  }
+  doc.setFontSize(8);
+  doc.text("Registration: UDYAM-KR-03-0058472", 130, 28);
   
   doc.setDrawColor(210, 210, 210);
   doc.setLineWidth(0.5);
-  doc.line(20, 42, 190, 42); // Header Divider
+  doc.line(20, 38, 190, 38); // Header Divider
   
   // Date & Reference
   const dateStr = new Date().toLocaleDateString("en-IN", {
@@ -48,81 +86,105 @@ export function generateOfferLetterPdf(
     year: "numeric"
   });
   doc.setFont("Helvetica", "bold");
-  doc.setFontSize(10);
+  doc.setFontSize(9.5);
   doc.setTextColor(60, 60, 60);
-  doc.text(`Ref: ${internshipId}`, 20, 52);
-  doc.text(`Date: ${dateStr}`, 145, 52);
+  doc.text(`Ref: ${internshipId}`, 20, 48);
+  doc.text(`Date: ${dateStr}`, 145, 48);
   
   // Title
-  doc.setFontSize(13);
+  doc.setFontSize(12);
   doc.setTextColor(20, 20, 20);
-  doc.text("SUB: APPOINTMENT FOR TECHNICAL INTERNSHIP", 20, 68);
+  doc.text("SUB: APPOINTMENT FOR TECHNICAL INTERNSHIP", 20, 62);
   
   // Letter Body
-  doc.setFontSize(10);
+  doc.setFontSize(9.5);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(80, 80, 80);
   
-  doc.text(`Dear ${studentName},`, 20, 80);
+  doc.text(`Dear ${studentName},`, 20, 74);
   
   const bodyText = `We are pleased to offer you a technical internship in the domain of ${domain} at ProDevOpz Technologies for a duration of ${duration}. Your onboarding process has been successfully validated. This appointment is subject to the following terms and conditions:\n\n` +
     `1. Scope of Internship: The candidate will engage in structured daily modules, git commits, code reviews, and capstone compilation. Deliverables must be pushed directly to version control dashboards.\n\n` +
     `2. Confidentiality (NDA): You will not disclose, release, or use any intellectual property, source code, database configurations, or client projects belonging to ProDevOpz during or after the cohort training period.\n\n` +
     `3. Intellectual Property Rights: All codes, wireframes, models, databases, and digital assets generated during the execution of daily modules and capstone projects shall remain the sole property of ProDevOpz.\n\n` +
-    `4. Graduation: Upon successful validation of all daily checklists and payment of the standard ₹200 database sync and verification fee, you will graduate with a verified ISO 9001:2015 / MSME completion certificate.\n\n` +
+    `4. Graduation: Upon successful validation of all daily checklists and payment of the standard database compilation fee of ₹200, you will graduate with a verified ISO 9001:2015 & MSME completion certificate and Letter of Recommendation (LOR).\n\n` +
     `We look forward to a highly productive engineering experience with us. Welcome to the ProDevOpz team!`;
   
   const lines = doc.splitTextToSize(bodyText, 170);
-  doc.text(lines, 20, 90);
+  doc.text(lines, 20, 84);
   
-  // Signatures
+  // Cursive Signature representation of Ammar Master
+  doc.setFont("Times", "italic");
+  doc.setFontSize(16);
+  doc.setTextColor(180, 83, 9);
+  doc.text("Ammar Master", 20, 168);
   doc.setFont("Helvetica", "bold");
+  doc.setFontSize(8.5);
   doc.setTextColor(40, 40, 40);
-  doc.text("Ammar Master", 20, 175);
+  doc.text("Ammar Master", 20, 174);
   doc.setFont("Helvetica", "normal");
+  doc.setFontSize(7.5);
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & CEO, ProDevOpz", 20, 180);
+  doc.text("Founder & CEO, ProDevOpz", 20, 179);
   
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
 }
 
 // B. Generate Certificate PDF (Landscape A4)
-export function generateCertificatePdf(
+export async function generateCertificatePdf(
   studentName: string,
   domain: string,
   certificateId: string,
   duration: string
-): Buffer {
+): Promise<Buffer> {
   const doc = new jsPDF({
     orientation: "landscape",
     format: "a4",
   });
   
-  // Double Border Gold/Black
-  doc.setDrawColor(255, 107, 0); // Orange/Gold
-  doc.setLineWidth(1);
+  // Double Border Gold/Brown
+  doc.setDrawColor(217, 119, 6); // Gold
+  doc.setLineWidth(1.5);
   doc.rect(10, 10, 277, 190);
-  doc.setDrawColor(30, 30, 30);
-  doc.setLineWidth(2);
+  doc.setDrawColor(180, 83, 9); // Brown Gold
+  doc.setLineWidth(0.5);
   doc.rect(12, 12, 273, 186);
 
   // Logo Header
-  doc.setFont("Helvetica", "bold");
-  doc.setFontSize(26);
-  doc.setTextColor(30, 30, 30);
-  doc.text("ProDevOpz Technologies", 148, 35, { align: "center" });
+  const logoData = getLogoDataUrl();
+  if (logoData) {
+    doc.addImage(logoData, "JPEG", 20, 20, 14, 14);
+  }
   
-  doc.setFontSize(10);
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(22);
+  doc.setTextColor(30, 30, 30);
+  doc.text("ProDevOpz", 38, 28);
+  
+  doc.setFontSize(8);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Intelligent Software Engineering | Registered MSME Enterprise | ISO 9001:2015 Firm", 148, 42, { align: "center" });
+  doc.text("Intelligent Software Engineering", 38, 33);
+
+  // MSME & ISO badges in top right
+  const msmeData = getMsmeDataUrl();
+  if (msmeData) {
+    doc.addImage(msmeData, "PNG", 210, 20, 22, 11);
+  }
+  doc.setDrawColor(217, 119, 6);
+  doc.setLineWidth(0.2);
+  doc.rect(238, 20, 22, 11);
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(6.5);
+  doc.setTextColor(180, 83, 9);
+  doc.text("ISO 9001:2015", 240, 27);
   
   // Subtitle
   doc.setFont("Helvetica", "bold");
-  doc.setFontSize(15);
-  doc.setTextColor(255, 107, 0);
-  doc.text("CERTIFICATE OF INTERNSHIP", 148, 65, { align: "center" });
+  doc.setFontSize(11);
+  doc.setTextColor(180, 83, 9);
+  doc.text("CERTIFICATE OF MERIT & COMPLETION", 148, 65, { align: "center" });
 
   doc.setFontSize(12);
   doc.setFont("Helvetica", "normal");
@@ -131,60 +193,95 @@ export function generateCertificatePdf(
 
   // Student Name
   doc.setFont("Helvetica", "bold");
-  doc.setFontSize(24);
-  doc.setTextColor(20, 20, 20);
+  doc.setFontSize(26);
+  doc.setTextColor(30, 30, 30);
   doc.text(studentName.toUpperCase(), 148, 96, { align: "center" });
   
   // Body text
-  doc.setFontSize(11);
+  doc.setFontSize(10.5);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(80, 80, 80);
   
-  const certText = `has successfully completed a professional technical internship in the domain of ${domain} with ProDevOpz Technologies. The candidate has executed all assigned coding modules, version-controlled sprints, and live deployment validation tasks throughout the ${duration} program.`;
-  const lines = doc.splitTextToSize(certText, 220);
+  const certText = `This is to certify that ${studentName} has successfully completed a professional technical internship in the domain of ${domain} with ProDevOpz Technologies. The candidate has executed all assigned coding modules, version-controlled sprints, and live deployment validation tasks throughout the ${duration} program.`;
+  const lines = doc.splitTextToSize(certText, 210);
   doc.text(lines, 148, 112, { align: "center" });
   
   // Signatures & Details
   doc.setFontSize(9);
   doc.setTextColor(100, 100, 100);
-  doc.text(`Certificate ID: ${certificateId}`, 25, 160);
-  doc.text(`Verify online at: prodevopz.in/verify-certificate?id=${certificateId}`, 25, 166);
-  
-  doc.setFont("Helvetica", "bold");
-  doc.setTextColor(40, 40, 40);
-  doc.text("Ammar Master", 200, 160);
   doc.setFont("Helvetica", "normal");
+  doc.text(`Certificate ID: ${certificateId}`, 20, 155);
+  doc.text(`Issue Date: ${new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}`, 20, 161);
+  doc.text(`Registrar: Belagavi, Karnataka`, 20, 167);
+
+  // Cursive Signature representation of Ammar Master
+  doc.setFont("Times", "italic");
+  doc.setFontSize(16);
+  doc.setTextColor(180, 83, 9);
+  doc.text("Ammar Master", 135, 156, { align: "center" });
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(8.5);
+  doc.setTextColor(40, 40, 40);
+  doc.text("Ammar Master", 135, 163, { align: "center" });
+  doc.setFont("Helvetica", "normal");
+  doc.setFontSize(7.5);
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & CEO, ProDevOpz", 200, 165);
+  doc.text("Founder & CEO, ProDevOpz", 135, 168, { align: "center" });
+
+  // QR Code
+  const verifyUrl = `https://prodevopz.in/verify-certificate?id=${certificateId}`;
+  try {
+    const qrDataUrl = await QRCode.toDataURL(verifyUrl, { margin: 1 });
+    doc.addImage(qrDataUrl, "PNG", 225, 145, 24, 24);
+    
+    doc.setFont("Helvetica", "bold");
+    doc.setFontSize(7.5);
+    doc.setTextColor(30, 30, 30);
+    doc.text("Scan to Verify", 225, 175);
+  } catch (qrErr) {
+    console.error("Error embedding QR in PDF:", qrErr);
+  }
 
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
 }
 
 // C. Generate LOR PDF
-export function generateLorPdf(
+export async function generateLorPdf(
   studentName: string,
   domain: string,
   certificateId: string,
   rating: string
-): Buffer {
+): Promise<Buffer> {
   const doc = new jsPDF();
   
-  // Header
+  // Header logo & text
+  const logoData = getLogoDataUrl();
+  if (logoData) {
+    doc.addImage(logoData, "JPEG", 20, 15, 10, 10);
+  }
+  
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(20, 20, 20);
-  doc.text("ProDevOpz Technologies", 20, 25);
+  doc.text("ProDevOpz Technologies", 32, 23);
   
-  doc.setFontSize(9);
+  doc.setFontSize(8.5);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Intelligent Software Engineering | prodevopz.in", 20, 31);
-  doc.text("Email: contactprodevopz@gmail.com | Registered MSME Enterprise", 20, 36);
+  doc.text("Intelligent Software Engineering | prodevopz.in", 32, 28);
+  
+  // MSME logo
+  const msmeData = getMsmeDataUrl();
+  if (msmeData) {
+    doc.addImage(msmeData, "PNG", 155, 15, 18, 9);
+  }
+  doc.setFontSize(8);
+  doc.text("Registration: UDYAM-KR-03-0058472", 130, 28);
   
   doc.setDrawColor(210, 210, 210);
   doc.setLineWidth(0.5);
-  doc.line(20, 42, 190, 42); // Header Divider
+  doc.line(20, 38, 190, 38); // Header Divider
   
   // Date & Reference
   const dateStr = new Date().toLocaleDateString("en-IN", {
@@ -193,22 +290,22 @@ export function generateLorPdf(
     year: "numeric"
   });
   doc.setFont("Helvetica", "bold");
-  doc.setFontSize(10);
+  doc.setFontSize(9.5);
   doc.setTextColor(60, 60, 60);
-  doc.text(`Ref: LOR-${certificateId}`, 20, 52);
-  doc.text(`Date: ${dateStr}`, 145, 52);
+  doc.text(`Ref: LOR-${certificateId}`, 20, 48);
+  doc.text(`Date: ${dateStr}`, 145, 48);
   
   // Title
-  doc.setFontSize(13);
+  doc.setFontSize(12);
   doc.setTextColor(20, 20, 20);
-  doc.text("LETTER OF RECOMMENDATION", 20, 68);
+  doc.text("LETTER OF RECOMMENDATION", 20, 62);
   
   // Letter Body
-  doc.setFontSize(10);
+  doc.setFontSize(9.5);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(80, 80, 80);
   
-  doc.text("TO WHOM IT MAY CONCERN,", 20, 80);
+  doc.text("TO WHOM IT MAY CONCERN,", 20, 74);
   
   const bodyText = `I am writing this letter of recommendation with absolute confidence for ${studentName}, who has recently completed a professional technical internship under my direct supervision in the domain of ${domain} at ProDevOpz Technologies.\n\n` +
     `Throughout their tenure, the candidate demonstrated outstanding technical expertise, software delivery standards, and analytical problem-solving skills. The program was structured to mirror production-level environments, requiring the candidate to deliver daily code updates, validate logic checkpoints, manage version control repositories, and deploy dynamic capstone web projects.\n\n` +
@@ -216,15 +313,21 @@ export function generateLorPdf(
     `I highly recommend them for future professional placements or engineering roles and wish them the absolute best in their career ahead.`;
   
   const lines = doc.splitTextToSize(bodyText, 170);
-  doc.text(lines, 20, 90);
+  doc.text(lines, 20, 84);
   
   // Signatures
+  doc.setFont("Times", "italic");
+  doc.setFontSize(16);
+  doc.setTextColor(180, 83, 9);
+  doc.text("Ammar Master", 20, 168);
   doc.setFont("Helvetica", "bold");
+  doc.setFontSize(8.5);
   doc.setTextColor(40, 40, 40);
-  doc.text("Ammar Master", 20, 175);
+  doc.text("Ammar Master", 20, 174);
   doc.setFont("Helvetica", "normal");
+  doc.setFontSize(7.5);
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & CEO, ProDevOpz", 20, 180);
+  doc.text("Founder & CEO, ProDevOpz", 20, 179);
   
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
@@ -386,8 +489,8 @@ export async function sendGraduationEmail(
   `);
 
   // Generate Certificate and LOR PDF buffers
-  const certBuffer = generateCertificatePdf(studentName, domain, certificateId, duration);
-  const lorBuffer = generateLorPdf(studentName, domain, certificateId, rating);
+  const certBuffer = await generateCertificatePdf(studentName, domain, certificateId, duration);
+  const lorBuffer = await generateLorPdf(studentName, domain, certificateId, rating);
 
   await transporter.sendMail({
     from: '"ProDevOpz Graduation Desk" <contactprodevopz@gmail.com>',
