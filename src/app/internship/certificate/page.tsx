@@ -2,7 +2,6 @@ import { db } from "@/lib/db";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import QRCode from "qrcode";
-import { Cpu } from "lucide-react";
 import PrintButton from "@/components/PrintButton";
 
 interface Props {
@@ -53,7 +52,7 @@ export default async function CertificatePage({ searchParams }: Props) {
   const startDateStr = student.startDate
     ? new Date(student.startDate).toLocaleDateString("en-IN", {
         day: "numeric",
-        month: "short",
+        month: "long",
         year: "numeric",
       })
     : "Start Date";
@@ -61,7 +60,7 @@ export default async function CertificatePage({ searchParams }: Props) {
   const endDateStr = student.endDate
     ? new Date(student.endDate).toLocaleDateString("en-IN", {
         day: "numeric",
-        month: "short",
+        month: "long",
         year: "numeric",
       })
     : "End Date";
@@ -74,6 +73,9 @@ export default async function CertificatePage({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen bg-[#050505] py-10 px-4 flex flex-col items-center gap-6 print:bg-white print:py-0">
+      {/* Google Fonts for Cursive Signature */}
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+
       {/* Print Controls (Hidden on print) */}
       <div className="w-full max-w-5xl flex items-center justify-between glass-panel p-4 border-white/5 print:hidden">
         <div className="flex flex-col text-left">
@@ -126,7 +128,7 @@ export default async function CertificatePage({ searchParams }: Props) {
         </div>
 
         {/* Content Body */}
-        <div className="text-center my-6 flex flex-col gap-4 relative z-10">
+        <div className="text-center my-4 flex flex-col gap-3 relative z-10">
           <span className="text-[10px] font-extrabold text-amber-700 uppercase tracking-[0.25em] block">
             Certificate of Merit & Completion
           </span>
@@ -134,7 +136,7 @@ export default async function CertificatePage({ searchParams }: Props) {
             PROUDLY PRESENTED TO
           </h1>
 
-          <div className="flex flex-col items-center my-2">
+          <div className="flex flex-col items-center my-1">
             <span className="font-display font-black text-3xl text-amber-800 border-b-2 border-amber-600/30 pb-1 px-12 tracking-wide uppercase">
               {student.name}
             </span>
@@ -143,7 +145,7 @@ export default async function CertificatePage({ searchParams }: Props) {
             </span>
           </div>
 
-          <p className="text-xs text-neutral-600 max-w-2xl mx-auto leading-relaxed mt-2">
+          <p className="text-xs text-neutral-600 max-w-2xl mx-auto leading-relaxed mt-1">
             This is to certify that <b className="text-neutral-900">{student.name}</b> has successfully completed a professional technical internship in the domain of <b className="text-amber-800 uppercase">{student.domain}</b> with ProDevOpz Technologies. The candidate has executed all assigned coding modules, version-controlled sprints, and live deployment validation tasks between <b className="text-neutral-900">{startDateStr}</b> and <b className="text-neutral-900">{endDateStr}</b>.
           </p>
         </div>
@@ -164,13 +166,15 @@ export default async function CertificatePage({ searchParams }: Props) {
             <div className="text-center flex flex-col items-center">
               {/* Cursive Signature */}
               <div className="h-10 flex items-center justify-center select-none mb-1">
-                <span className="font-serif italic font-bold text-amber-700 text-lg tracking-widest relative">
-                  MD Jalaluddin
-                  <span className="absolute bottom-0.5 left-0 right-0 h-0.5 bg-amber-600/20 rotate-[-2deg]" />
+                <span 
+                  className="text-amber-700 text-2xl tracking-wide relative block"
+                  style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 700 }}
+                >
+                  Ammar Master
                 </span>
               </div>
-              <span className="text-[9px] font-extrabold text-neutral-800 font-display">MD Jalaluddin</span>
-              <span className="text-[8px] text-neutral-400 font-semibold">Founder & MD, ProDevOpz</span>
+              <span className="text-[9px] font-extrabold text-neutral-800 font-display">Ammar Master</span>
+              <span className="text-[8px] text-neutral-400 font-semibold">Founder & CEO, ProDevOpz</span>
             </div>
 
             {/* Circular Stamp */}

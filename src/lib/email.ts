@@ -65,7 +65,12 @@ export function generateOfferLetterPdf(
   
   doc.text(`Dear ${studentName},`, 20, 80);
   
-  const bodyText = `We are pleased to offer you a technical internship in the domain of ${domain} at ProDevOpz Technologies for a duration of ${duration}. Your onboarding process has been successfully validated.\n\nDuring this tenure, you will work on daily domain modules, custom project workflows, and version-controlled sprint releases. All task guides are available on your student dashboard. Your performance will be monitored daily.\n\nUpon successful execution of all assigned modules and graduation, you will receive an official ISO 9001:2015 & MSME Certified Certificate of Completion along with a Letter of Recommendation (LOR) for future placements.\n\nWe look forward to a highly productive engineering experience with us. Welcome to the cohort!`;
+  const bodyText = `We are pleased to offer you a technical internship in the domain of ${domain} at ProDevOpz Technologies for a duration of ${duration}. Your onboarding process has been successfully validated. This appointment is subject to the following terms and conditions:\n\n` +
+    `1. Scope of Internship: The candidate will engage in structured daily modules, git commits, code reviews, and capstone compilation. Deliverables must be pushed directly to version control dashboards.\n\n` +
+    `2. Confidentiality (NDA): You will not disclose, release, or use any intellectual property, source code, database configurations, or client projects belonging to ProDevOpz during or after the cohort training period.\n\n` +
+    `3. Intellectual Property Rights: All codes, wireframes, models, databases, and digital assets generated during the execution of daily modules and capstone projects shall remain the sole property of ProDevOpz.\n\n` +
+    `4. Graduation: Upon successful validation of all daily checklists and payment of the standard ₹200 database sync and verification fee, you will graduate with a verified ISO 9001:2015 / MSME completion certificate.\n\n` +
+    `We look forward to a highly productive engineering experience with us. Welcome to the ProDevOpz team!`;
   
   const lines = doc.splitTextToSize(bodyText, 170);
   doc.text(lines, 20, 90);
@@ -73,10 +78,10 @@ export function generateOfferLetterPdf(
   // Signatures
   doc.setFont("Helvetica", "bold");
   doc.setTextColor(40, 40, 40);
-  doc.text("MD Jalaluddin", 20, 165);
+  doc.text("Ammar Master", 20, 175);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & MD, ProDevOpz", 20, 170);
+  doc.text("Founder & CEO, ProDevOpz", 20, 180);
   
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
@@ -147,10 +152,10 @@ export function generateCertificatePdf(
   
   doc.setFont("Helvetica", "bold");
   doc.setTextColor(40, 40, 40);
-  doc.text("MD Jalaluddin", 200, 160);
+  doc.text("Ammar Master", 200, 160);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & MD, ProDevOpz", 200, 165);
+  doc.text("Founder & CEO, ProDevOpz", 200, 165);
 
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
@@ -205,7 +210,10 @@ export function generateLorPdf(
   
   doc.text("TO WHOM IT MAY CONCERN,", 20, 80);
   
-  const bodyText = `I am writing this letter to recommend ${studentName}, who recently completed a technical internship in the domain of ${domain} with ProDevOpz Technologies. During their tenure, they demonstrated excellent coding standards, problem-solving skills, and deep engineering capabilities.\n\nThey achieved an overall evaluation rating of ${rating || "5"} / 5 Stars across all completed sprints, showing strong adaptation to modern tech stacks and structured development paradigms.\n\nI highly recommend them for any junior developer or cloud engineering opportunities they pursue. They will prove to be a valuable asset to any software engineering team.`;
+  const bodyText = `I am writing this letter of recommendation with absolute confidence for ${studentName}, who has recently completed a professional technical internship under my direct supervision in the domain of ${domain} at ProDevOpz Technologies.\n\n` +
+    `Throughout their tenure, the candidate demonstrated outstanding technical expertise, software delivery standards, and analytical problem-solving skills. The program was structured to mirror production-level environments, requiring the candidate to deliver daily code updates, validate logic checkpoints, manage version control repositories, and deploy dynamic capstone web projects.\n\n` +
+    `The candidate excelled at modular coding practices, documentation standards, and adapting to modern software tools. They maintained an exceptional work ethic, delivering clean components that achieved a rating of ${rating || "5/5 Stars"}.\n\n` +
+    `I highly recommend them for future professional placements or engineering roles and wish them the absolute best in their career ahead.`;
   
   const lines = doc.splitTextToSize(bodyText, 170);
   doc.text(lines, 20, 90);
@@ -213,10 +221,10 @@ export function generateLorPdf(
   // Signatures
   doc.setFont("Helvetica", "bold");
   doc.setTextColor(40, 40, 40);
-  doc.text("MD Jalaluddin", 20, 165);
+  doc.text("Ammar Master", 20, 175);
   doc.setFont("Helvetica", "normal");
   doc.setTextColor(120, 120, 120);
-  doc.text("Founder & MD, ProDevOpz", 20, 170);
+  doc.text("Founder & CEO, ProDevOpz", 20, 180);
   
   const buffer = doc.output("arraybuffer");
   return Buffer.from(buffer);
