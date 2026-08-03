@@ -55,10 +55,7 @@ export default async function LORPage({ searchParams }: Props) {
         <div className="flex justify-between items-start border-b border-neutral-200 pb-8 mb-6 relative z-10">
           <div className="flex flex-col text-left">
             <div className="flex items-center gap-2 mb-2">
-              <svg className="w-8 h-8 text-accent-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <rect x="2" y="2" width="20" height="20" rx="4" />
-                <path d="M6 12h12M12 6v12" />
-              </svg>
+              <img src="/logo.jpg" alt="ProDevOpz Logo" className="w-8 h-8 rounded-lg object-contain bg-black" />
               <span className="font-display font-extrabold text-2xl tracking-tight text-neutral-900">
                 ProDevOpz
               </span>

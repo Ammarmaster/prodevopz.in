@@ -99,10 +99,7 @@ export default async function CertificatePage({ searchParams }: Props) {
         {/* Top Header Row */}
         <div className="flex justify-between items-center border-b-2 border-amber-600/20 pb-4 relative z-10">
           <div className="flex items-center gap-2.5 text-left">
-            <svg className="w-9 h-9 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <rect x="2" y="2" width="20" height="20" rx="4" />
-              <path d="M6 12h12M12 6v12" />
-            </svg>
+            <img src="/logo.jpg" alt="ProDevOpz Logo" className="w-9 h-9 rounded-lg object-contain bg-black" />
             <div>
               <span className="font-display font-black text-xl tracking-tight text-neutral-900 block leading-none">
                 ProDevOpz

@@ -28,9 +28,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between glass-panel px-6 py-3 border-white/[0.06] shadow-2xl">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-orange to-accent-purple flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
-            <Cpu className="w-5 h-5 text-white" />
-          </div>
+          <img src="/logo.jpg" alt="ProDevOpz Logo" className="w-8 h-8 rounded-lg object-contain shadow-lg group-hover:scale-105 transition-transform bg-black" />
           <span className="font-display font-bold text-xl tracking-tight bg-gradient-to-r from-white via-white to-accent-orange bg-clip-text text-transparent">
             ProDevOpz
           </span>
