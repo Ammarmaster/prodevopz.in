@@ -74,8 +74,34 @@ export default function Home() {
     "Redis",
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "ProDevOpz Technologies",
+    "image": "https://prodevopz.in/logo.jpg",
+    "url": "https://prodevopz.in",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "description": "ProDevOpz is a leading custom software development agency, mobile app builder, and AI engineering firm. Join our industry-recognized free internships with verified MSME & ISO certificates of completion.",
+    "keywords": "prodevopz, internship, free internship, certificate, free certificate, software making agency, custom software development",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": "0",
+      "description": "Industry-grade Free Internship with Verified Certificates"
+    }
+  };
+
   return (
     <div className="w-full flex flex-col gap-24 overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-24 px-4">
         {/* Glow overlay */}

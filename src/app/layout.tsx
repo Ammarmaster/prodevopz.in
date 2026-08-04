@@ -6,33 +6,35 @@ import MouseGlow from "@/components/MouseGlow";
 import AIChatbot from "@/components/AIChatbot";
 
 export const metadata: Metadata = {
-  title: "ProDevOpz | Building Intelligent Software for the Future",
+  title: "ProDevOpz | Custom Software Development, Internships & AI Solutions",
   description:
-    "Transforming complex startup and enterprise ideas into AI-powered digital products. Leading custom web development, android apps, iOS apps, cloud migrations, and DevOps services.",
+    "ProDevOpz is a leading custom software development agency, mobile app builder, and AI engineering firm. Join our industry-recognized free internships with verified MSME & ISO certificates of completion.",
   keywords: [
-    "Software Development Company India",
-    "AI Development Company",
-    "React Native Development Company",
-    "Flutter Development Company",
-    "Android App Development",
-    "iOS App Development",
-    "ERP Development",
-    "CRM Software",
-    "POS Software",
-    "Restaurant ERP",
-    "DevOps Company",
-    "Online Internship India",
-    "Web Development Internship",
-    "Internship Belagavi",
+    "prodevopz",
+    "internship",
+    "free internship",
+    "certificate",
+    "free certificate",
+    "software making agency",
+    "custom software development company",
+    "software development agency",
+    "free internship with certificate",
+    "online web development internship",
+    "app development internship",
+    "cloud and devops internship",
+    "msme certified certificate",
+    "iso certified certificate",
+    "verified certificate registry",
   ],
+  manifest: "/manifest.json",
   metadataBase: new URL("https://prodevopz.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "ProDevOpz | Custom Software & AI Development Solutions",
+    title: "ProDevOpz | Custom Software Development, Internships & AI Solutions",
     description:
-      "Official website of ProDevOpz. Custom website development, mobile apps, artificial intelligence engineering, and DevOps automation.",
+      "ProDevOpz is a leading custom software development agency and AI engineering firm. Apply for our free internships with verified MSME & ISO certificates.",
     url: "https://prodevopz.in",
     siteName: "ProDevOpz",
     locale: "en_IN",
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ProDevOpz | AI & Cloud Software Engineering",
+    title: "ProDevOpz | Custom Software & Internships",
     description:
-      "Accelerating startup growth with next-gen AI applications, microservices, and premium UX.",
+      "Leading custom software development agency and AI engineering firm. Join our free internships with verified certificates.",
   },
 };
 
