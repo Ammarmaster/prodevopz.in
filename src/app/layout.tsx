@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     "verified certificate registry",
   ],
   manifest: "/manifest.json",
+  verification: {
+    google: "cPtP_zDyyYBryhpHiTEuNMxlYvTjaKErYo9cMyyPLI4",
+  },
   metadataBase: new URL("https://prodevopz.in"),
   alternates: {
     canonical: "/",
