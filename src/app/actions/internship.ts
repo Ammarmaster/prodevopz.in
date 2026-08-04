@@ -131,7 +131,8 @@ export async function registerStudent(formData: {
     }
 
     // Send Welcome Offer Letter email immediately!
-    const dashboardLink = `http://localhost:3000/internship/dashboard?studentId=${student.id}`;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://prodevopz.in";
+    const dashboardLink = `${baseUrl}/internship/dashboard?studentId=${student.id}`;
     try {
       await sendOfferLetterEmail(student.email, student.name, student.domain, dashboardLink, student.duration, student.internshipId || "");
     } catch (mailError: any) {
@@ -290,10 +291,11 @@ export async function rejectSubmission(submissionId: string, mentorFeedback: str
 }
 
 // 7. Verify a Certificate Publicly
-export async function verifyCertificate(certificateId: string) {
+export async function verifyCertificate(idOrCert: string) {
   try {
-    return await db.student.findUnique({
-      where: { certificateId },
+    // Try finding by certificateId first
+    let student = await db.student.findUnique({
+      where: { certificateId: idOrCert },
       select: {
         name: true,
         domain: true,
@@ -301,12 +303,35 @@ export async function verifyCertificate(certificateId: string) {
         startDate: true,
         endDate: true,
         certificateId: true,
+        internshipId: true,
         status: true,
         college: true,
         rating: true,
         feedback: true,
       },
     });
+
+    // If not found, fall back to searching by internshipId
+    if (!student) {
+      student = await db.student.findUnique({
+        where: { internshipId: idOrCert },
+        select: {
+          name: true,
+          domain: true,
+          duration: true,
+          startDate: true,
+          endDate: true,
+          certificateId: true,
+          internshipId: true,
+          status: true,
+          college: true,
+          rating: true,
+          feedback: true,
+        },
+      });
+    }
+
+    return student;
   } catch (error) {
     console.error("Error verifying certificate:", error);
     return null;
@@ -381,13 +406,15 @@ export async function verifyRazorpayPaymentAction(
     });
 
     // Send graduation credentials email with PDF attachments!
-    const certUrl = `http://localhost:3000/internship/certificate?studentId=${updatedStudent.id}`;
-    const lorUrl = `http://localhost:3000/internship/lor?studentId=${updatedStudent.id}`;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://prodevopz.in";
+    const certUrl = `${baseUrl}/internship/certificate?studentId=${updatedStudent.id}`;
+    const lorUrl = `${baseUrl}/internship/lor?studentId=${updatedStudent.id}`;
     try {
       await sendGraduationEmail(
         updatedStudent.email,
         updatedStudent.name,
         updatedStudent.domain,
+        updatedStudent.id,
         updatedStudent.certificateId || "",
         updatedStudent.duration,
         (updatedStudent.rating || 5).toString()

@@ -451,12 +451,14 @@ export async function sendGraduationEmail(
   toEmail: string,
   studentName: string,
   domain: string,
+  studentId: string,
   certificateId: string,
   duration: string,
   rating: string
 ) {
-  const certUrl = `http://localhost:3000/internship/certificate?studentId=${certificateId}`;
-  const lorUrl = `http://localhost:3000/internship/lor?studentId=${certificateId}`;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://prodevopz.in";
+  const certUrl = `${baseUrl}/internship/certificate?studentId=${studentId}`;
+  const lorUrl = `${baseUrl}/internship/lor?studentId=${studentId}`;
 
   const htmlContent = emailWrapper(`
     <h3 style="font-size: 18px; font-weight: bold; color: #ffffff; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 8px;">
