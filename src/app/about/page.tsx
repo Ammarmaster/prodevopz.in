@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Sparkles, Calendar, Award, Target, Eye, Users, ArrowRight, UserCheck, Code2, Server } from "lucide-react";
@@ -67,8 +68,9 @@ export default function About() {
           "@type": "Person",
           "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
           "name": "Ammar Master",
-          "alternateName": "Jalaluddin Master",
+          "alternateName": ["Jalaluddin Master"],
           "jobTitle": "Founder & Software Engineer",
+          "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
           "url": "https://prodevopz.jobsio.in/founder/ammar-master"
         }
       }
@@ -138,24 +140,35 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 flex flex-col gap-4">
-              <div>
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
-                  Ammar Master
-                </h3>
-                <p className="text-xs sm:text-sm font-semibold text-accent-purple">
-                  Also known as Jalaluddin Master
-                </p>
-                <p className="text-xs font-medium text-foreground/75 mt-0.5">
-                  Founder &amp; Software Engineer at ProDevOpz
-                </p>
+            <div className="lg:col-span-8 flex flex-col gap-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <figure className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shadow-xl shrink-0 bg-white/[0.02]">
+                  <Image
+                    src="/ammar-master-jalaluddin-master-founder-prodevopz.jpg"
+                    alt="Ammar Master (Jalaluddin Master), Founder of ProDevOpz"
+                    fill
+                    sizes="(max-width: 640px) 96px, 112px"
+                    className="object-cover object-top"
+                  />
+                </figure>
+                <div>
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                    Ammar Master
+                  </h3>
+                  <p className="text-xs sm:text-sm font-semibold text-accent-purple">
+                    Also known as Jalaluddin Master
+                  </p>
+                  <p className="text-xs font-medium text-foreground/75 mt-0.5">
+                    Founder &amp; Software Engineer at ProDevOpz
+                  </p>
+                </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed">
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
                 Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz. He leads technical architecture, systems engineering, and product development, creating robust web platforms, intelligent AI integrations, cloud infrastructures, and billing software like EzBill for businesses and startups.
               </p>
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <Link
                   href="/founder/ammar-master"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-4 py-2.5 rounded-xl transition-colors"

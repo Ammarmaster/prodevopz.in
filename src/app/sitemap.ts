@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/founder/ammar-master",
+    "/founder/jalaluddin-master",
     "/ezbill",
     "/portfolio",
     "/pricing",
@@ -27,6 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "daily" : "weekly",
-    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/internship" ? 0.9 : 0.7,
+    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/internship" || route.startsWith("/founder") ? 0.9 : 0.7,
   }));
 }

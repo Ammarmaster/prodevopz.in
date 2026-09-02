@@ -1,12 +1,13 @@
 # ProDevOpz Technologies
 
-ProDevOpz is a custom software development company, technology solutions provider, mobile app builder, and artificial intelligence integration engineering agency.
+ProDevOpz (ProDevOpz Technologies) is a custom software development company, technology solutions provider, mobile app builder, and artificial intelligence integration engineering agency.
 
 ## Website & Web Presence
 
 - Official Website: https://prodevopz.jobsio.in/
 - Founder Profile: https://prodevopz.jobsio.in/founder/ammar-master
-- Featured Product (EzBill): https://prodevopz.jobsio.in/ezbill
+- Featured Software Product (EzBill): https://prodevopz.jobsio.in/ezbill
+- Founder Official Photograph: https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg
 
 ## Leadership & Founder
 
@@ -16,7 +17,7 @@ ProDevOpz is a custom software development company, technology solutions provide
 
 ## Software Products & Projects
 
-- EzBill (EZBill): Business management, GST billing, inventory tracking, order management, and revenue analytics software suite engineered by ProDevOpz.
+- EzBill (EZBill / EZ Bill): Business management, GST billing, inventory tracking, order management, and revenue analytics software suite engineered by ProDevOpz.
 - Enterprise ERP & POS Systems: Cloud-synchronized point-of-sale, HRMS, and multi-location retail/restaurant billing engines.
 
 ## Primary Services

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ProjectEstimator from "@/components/ProjectEstimator";
 import MacbookMockup from "@/components/MacbookMockup";
 import {
@@ -97,8 +98,9 @@ export default function Home() {
           "@type": "Person",
           "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
           "name": "Ammar Master",
-          "alternateName": "Jalaluddin Master",
+          "alternateName": ["Jalaluddin Master", "Md Jalaluddin Master"],
           "jobTitle": "Founder & Software Engineer",
+          "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
           "url": "https://prodevopz.jobsio.in/founder/ammar-master"
         },
         "contactPoint": {
@@ -121,8 +123,9 @@ export default function Home() {
         "@type": "Person",
         "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
         "name": "Ammar Master",
-        "alternateName": "Jalaluddin Master",
+        "alternateName": ["Jalaluddin Master", "Md Jalaluddin Master"],
         "jobTitle": "Founder & Software Engineer",
+        "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
         "worksFor": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -135,9 +138,12 @@ export default function Home() {
         "alternateName": ["EZBill", "EZ Bill"],
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web, Android, Windows, Cloud",
-        "description": "EzBill is an enterprise billing, inventory management, and business analytics software platform developed by ProDevOpz.",
+        "description": "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
         "url": "https://prodevopz.jobsio.in/ezbill",
         "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "creator": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         }
       }
@@ -281,7 +287,7 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-accent-purple/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-8 flex flex-col gap-4">
+            <div className="lg:col-span-8 flex flex-col gap-5">
               <div className="flex items-center gap-2">
                 <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/10 px-3 py-1 rounded-full border border-accent-orange/20">
                   Leadership
@@ -291,26 +297,37 @@ export default function Home() {
                 </span>
               </div>
 
-              <div>
-                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
-                  Meet the Founder
-                </h2>
-                <h3 className="text-base sm:text-lg font-bold text-white mt-1">
-                  Ammar Master{" "}
-                  <span className="text-xs sm:text-sm font-semibold text-accent-purple">
-                    (Also known as Jalaluddin Master)
-                  </span>
-                </h3>
-                <p className="text-xs font-semibold text-foreground/70 mt-0.5">
-                  Founder &amp; Software Engineer at ProDevOpz
-                </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <figure className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shadow-xl shrink-0 bg-white/[0.02]">
+                  <Image
+                    src="/ammar-master-jalaluddin-master-founder-prodevopz.jpg"
+                    alt="Ammar Master (Jalaluddin Master), Founder of ProDevOpz"
+                    fill
+                    sizes="(max-width: 640px) 96px, 112px"
+                    className="object-cover object-top"
+                  />
+                </figure>
+                <div>
+                  <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
+                    Meet the Founder
+                  </h2>
+                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                    Ammar Master{" "}
+                    <span className="text-xs sm:text-sm font-semibold text-accent-purple">
+                      (Jalaluddin Master)
+                    </span>
+                  </h3>
+                  <p className="text-xs font-semibold text-foreground/70 mt-0.5">
+                    Founder &amp; Software Engineer at ProDevOpz
+                  </p>
+                </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed max-w-2xl">
-                Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz. He leads technical architecture, system design, and AI integrations, driving high-performance software engineering for startups and modern businesses.
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-2xl">
+                Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz and the EzBill billing software suite. He leads technical architecture, system design, and AI engineering for startups and modern businesses.
               </p>
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <Link
                   href="/founder/ammar-master"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-5 py-3 rounded-xl transition-all"

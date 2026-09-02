@@ -5,27 +5,24 @@ import {
   Receipt,
   BarChart3,
   Boxes,
-  ShieldCheck,
-  Zap,
   ArrowRight,
   Database,
-  Terminal,
-  CheckCircle,
   Cpu,
   Layers,
+  UserCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "EzBill — Business Management & Billing Software | ProDevOpz",
+  title: "EzBill — Billing & Business Management Software | ProDevOpz",
   description:
-    "EzBill (EZBill) is an enterprise billing, invoicing, and business management software platform developed by ProDevOpz featuring real-time sales analytics and inventory control.",
+    "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
   alternates: {
     canonical: "/ezbill",
   },
   openGraph: {
-    title: "EzBill — Business Management & Billing Software | ProDevOpz",
+    title: "EzBill — Billing & Business Management Software | ProDevOpz",
     description:
-      "EzBill (EZBill) is an enterprise billing, invoicing, and business management software platform developed by ProDevOpz featuring real-time sales analytics and inventory control.",
+      "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
     url: "https://prodevopz.jobsio.in/ezbill",
     siteName: "ProDevOpz",
     locale: "en_IN",
@@ -41,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EzBill — Business Management & Billing Software | ProDevOpz",
+    title: "EzBill — Billing & Business Management Software | ProDevOpz",
     description:
-      "EzBill (EZBill) is an enterprise billing and business management software platform developed by ProDevOpz.",
+      "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz.",
     images: ["https://prodevopz.jobsio.in/logo.jpg"],
   },
 };
@@ -59,7 +56,7 @@ export default function EzBillPage() {
         "alternateName": ["EZBill", "EZ Bill", "EzBill Software"],
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web, Android, Windows, Cloud",
-        "description": "EzBill is an intelligent billing, invoicing, order management, and business analytics software platform engineered by ProDevOpz.",
+        "description": "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
         "url": "https://prodevopz.jobsio.in/ezbill",
         "image": "https://prodevopz.jobsio.in/logo.jpg",
         "author": {
@@ -68,6 +65,10 @@ export default function EzBillPage() {
           "name": "ProDevOpz",
           "url": "https://prodevopz.jobsio.in/"
         },
+        "creator": {
+          "@type": "Organization",
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
         "publisher": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -75,13 +76,13 @@ export default function EzBillPage() {
           "@type": "Offer",
           "priceCurrency": "INR",
           "availability": "https://schema.org/InStock",
-          "description": "Custom enterprise deployment and licenses by ProDevOpz"
+          "description": "Custom enterprise deployment and licenses by ProDevOpz Technologies"
         },
         "featureList": [
-          "Real-time GST invoicing & digital billing receipts",
-          "Inventory ledger and low-stock automated alerts",
+          "Fast GST invoicing & digital billing receipts",
+          "Real-time inventory ledger and stock tracking",
           "Revenue analytics and daily sales reporting dashboards",
-          "Multi-terminal point of sale (POS) synchronization",
+          "Multi-terminal point-of-sale (POS) synchronization",
           "Secure cloud database with RESTful APIs"
         ]
       },
@@ -89,7 +90,7 @@ export default function EzBillPage() {
         "@type": "WebPage",
         "@id": "https://prodevopz.jobsio.in/ezbill",
         "url": "https://prodevopz.jobsio.in/ezbill",
-        "name": "EzBill — Business Management & Billing Software | ProDevOpz",
+        "name": "EzBill — Billing & Business Management Software | ProDevOpz",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://prodevopz.jobsio.in/#website",
@@ -103,7 +104,7 @@ export default function EzBillPage() {
   const features = [
     {
       icon: <Receipt className="w-5 h-5 text-accent-orange" />,
-      title: "Fast Billing & GST Invoicing",
+      title: "Fast Invoicing & GST Billing",
       desc: "Generate professional GST-compliant invoices and digital receipts in seconds, optimized for retail, restaurant, and wholesale counters.",
     },
     {
@@ -133,7 +134,7 @@ export default function EzBillPage() {
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
-          { label: "Products", href: "/portfolio" },
+          { label: "Portfolio", href: "/portfolio" },
           { label: "EzBill" },
         ]}
       />
@@ -147,7 +148,7 @@ export default function EzBillPage() {
               Featured Software Product
             </span>
             <span className="text-[11px] font-medium text-foreground/50 bg-white/[0.02] px-3 py-1 rounded-full border border-white/5">
-              Engineered by ProDevOpz
+              Developed by ProDevOpz
             </span>
           </div>
 
@@ -156,12 +157,12 @@ export default function EzBillPage() {
               EzBill (EZBill)
             </h1>
             <p className="text-sm sm:text-base font-semibold text-accent-purple mt-1.5">
-              Intelligent Billing, POS &amp; Business Management Software
+              Billing &amp; Business Management Software
             </p>
           </div>
 
           <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-3xl pt-2 border-t border-white/[0.05]">
-            EzBill (also known as EZBill) is an enterprise-grade business management and billing software platform designed and developed by ProDevOpz. Built for speed and reliability, EzBill streamlines invoicing, inventory tracking, order management, and revenue analytics for modern commercial operations.
+            EzBill (also known as EZBill or EZ Bill) is an enterprise-grade business management and billing software product developed by ProDevOpz (ProDevOpz Technologies). Built for speed and reliability, EzBill streamlines invoicing, inventory tracking, order management, and revenue analytics for modern commercial businesses.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -173,10 +174,11 @@ export default function EzBillPage() {
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
-              href="/portfolio"
-              className="text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
+              href="/founder/jalaluddin-master"
+              className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
             >
-              View More Projects
+              <UserCheck className="w-3.5 h-3.5 text-accent-orange" />
+              Meet the Founder
             </Link>
           </div>
         </div>
@@ -208,21 +210,21 @@ export default function EzBillPage() {
         </div>
       </section>
 
-      {/* Relationship & Tech Stack */}
+      {/* Relationship with ProDevOpz & Founder */}
       <section className="glass-panel border-white/[0.06] p-8 flex flex-col gap-6">
         <div className="flex items-center gap-2.5 border-b border-white/[0.05] pb-4">
           <Layers className="w-5 h-5 text-accent-blue" />
           <h2 className="font-display font-bold text-xl text-white">
-            Built by ProDevOpz Software Engineering
+            Developed by ProDevOpz Technologies
           </h2>
         </div>
 
         <div className="flex flex-col gap-4 text-xs sm:text-sm text-foreground/70 leading-relaxed">
           <p>
-            EzBill exemplifies ProDevOpz&apos;s approach to custom software engineering: combining responsive user interfaces with robust, modular backend architecture. Designed to eliminate manual paperwork and inventory leakage, EzBill delivers reliable performance across cloud servers and offline-capable edge devices.
+            EzBill was engineered under the technical leadership of <Link href="/founder/jalaluddin-master" className="text-accent-orange hover:underline font-semibold">Md Jalaluddin Master (Jalaluddin Master / Ammar Master)</Link> at ProDevOpz. It provides a robust, scalable architecture that eliminates manual paperwork and inventory leakages.
           </p>
           <p>
-            ProDevOpz customizes and deploys EzBill for diverse business domains including retail chains, restaurants, hospital inventory, and logistics hubs.
+            ProDevOpz customizes and deploys EzBill for diverse retail, restaurant, wholesale, and multi-warehouse operations.
           </p>
         </div>
 
@@ -250,7 +252,7 @@ export default function EzBillPage() {
             ProDevOpz Solutions
           </span>
           <h3 className="font-display font-bold text-base text-white">
-            Explore Custom Software &amp; ERP Development
+            Custom Software &amp; ERP Development
           </h3>
           <p className="text-xs text-foreground/60">
             Learn more about how ProDevOpz builds tailored software, AI solutions, and enterprise platforms.
@@ -258,10 +260,10 @@ export default function EzBillPage() {
         </div>
         <div className="flex items-center gap-3">
           <Link
-            href="/services/erp-crm-systems"
+            href="/portfolio"
             className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
           >
-            ERP Services
+            All Projects
           </Link>
           <Link
             href="/"
