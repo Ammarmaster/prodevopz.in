@@ -103,6 +103,29 @@ export default function Home() {
           "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
           "url": "https://prodevopz.jobsio.in/founder/ammar-master"
         },
+        "member": [
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/saad-mulla#person",
+            "name": "Saad Mulla",
+            "jobTitle": "Chief Executive Officer (CEO)",
+            "url": "https://prodevopz.jobsio.in/leadership/saad-mulla"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh#person",
+            "name": "Ruvaid Shaikh",
+            "jobTitle": "Co-Founder",
+            "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle#person",
+            "name": "Vaibhav Yalamalle",
+            "jobTitle": "Managing Director (MD)",
+            "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle"
+          }
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "contactprodevopz@gmail.com",
@@ -132,6 +155,39 @@ export default function Home() {
         "url": "https://prodevopz.jobsio.in/founder/ammar-master"
       },
       {
+        "@type": "Person",
+        "@id": "https://prodevopz.jobsio.in/leadership/saad-mulla#person",
+        "name": "Saad Mulla",
+        "jobTitle": "Chief Executive Officer (CEO)",
+        "image": "https://prodevopz.jobsio.in/team/saad-mulla-ceo-prodevopz.jpg",
+        "worksFor": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "url": "https://prodevopz.jobsio.in/leadership/saad-mulla"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh#person",
+        "name": "Ruvaid Shaikh",
+        "jobTitle": "Co-Founder",
+        "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+        "worksFor": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle#person",
+        "name": "Vaibhav Yalamalle",
+        "jobTitle": "Managing Director (MD)",
+        "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg",
+        "worksFor": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle"
+      },
+      {
         "@type": "SoftwareApplication",
         "@id": "https://prodevopz.jobsio.in/ezbill#software",
         "name": "EzBill",
@@ -140,6 +196,24 @@ export default function Home() {
         "operatingSystem": "Web, Android, Windows, Cloud",
         "description": "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
         "url": "https://prodevopz.jobsio.in/ezbill",
+        "image": "https://prodevopz.jobsio.in/products/ezbill-app-icon.png",
+        "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "creator": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://prodevopz.jobsio.in/s1pro#software",
+        "name": "S1Pro",
+        "alternateName": ["S1Pro Software", "S1 Pro", "S1Pro Field Service Platform"],
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS, Cloud",
+        "description": "S1Pro is a field service management platform developed by ProDevOpz for managing customers, service professionals, bookings, jobs and service operations.",
+        "url": "https://prodevopz.jobsio.in/s1pro",
+        "image": "https://prodevopz.jobsio.in/products/s1pro-app-icon.png",
         "author": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -358,6 +432,107 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5.5. Leadership Team Section */}
+      <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col gap-8 text-left">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-white/[0.05] pb-6">
+            <div>
+              <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/10 px-3 py-1 rounded-full border border-accent-orange/20 w-fit">
+                Executive Leadership
+              </span>
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-2">
+                Meet Our Leadership Team
+              </h2>
+              <p className="text-xs text-foreground/60 mt-1 max-w-xl">
+                Driving innovation across custom software, AI integrations, enterprise ERP systems, and cloud infrastructure.
+              </p>
+            </div>
+            <Link
+              href="/leadership"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-orange hover:text-white transition-colors"
+            >
+              <span>View All Leadership</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Saad Mulla",
+                role: "Chief Executive Officer (CEO)",
+                location: "Dodda Ballapur, Karnataka",
+                education: "Rani Channamma University (RCUB)",
+                image: "/team/saad-mulla-ceo-prodevopz.jpg",
+                alt: "Saad Mulla, CEO of ProDevOpz",
+                slug: "saad-mulla",
+                badge: "text-accent-orange bg-accent-orange/10 border-accent-orange/20",
+              },
+              {
+                name: "Ruvaid Shaikh",
+                role: "Co-Founder",
+                location: "Sangli, Maharashtra",
+                education: "Sanjay Ghodawat University",
+                image: "/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+                alt: "Ruvaid Shaikh, Co-Founder of ProDevOpz",
+                slug: "ruvaid-shaikh",
+                badge: "text-accent-purple bg-accent-purple/10 border-accent-purple/20",
+              },
+              {
+                name: "Vaibhav Yalamalle",
+                role: "Managing Director (MD)",
+                location: "Athani, Karnataka",
+                education: "KLE'S S.C.P Arts & D.D. Shirol PG College",
+                image: "/team/vaibhav-yalamalle-md-prodevopz.jpg",
+                alt: "Vaibhav Yalamalle, Managing Director of ProDevOpz",
+                slug: "vaibhav-yalamalle",
+                badge: "text-accent-blue bg-accent-blue/10 border-accent-blue/20",
+              },
+            ].map((m, idx) => (
+              <div
+                key={idx}
+                className="glass-card p-5 flex flex-col justify-between border-white/[0.08] relative overflow-hidden group hover:border-white/20 transition-all"
+              >
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                    <figure className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-white/10 shadow-lg shrink-0 bg-white/[0.02]">
+                      <Image
+                        src={m.image}
+                        alt={m.alt}
+                        fill
+                        sizes="(max-width: 640px) 64px, 80px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </figure>
+                    <div className="flex flex-col gap-0.5">
+                      <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border w-fit ${m.badge}`}>
+                        {m.role}
+                      </span>
+                      <h3 className="font-display font-bold text-base text-white mt-1">
+                        {m.name}
+                      </h3>
+                      <span className="text-[11px] text-foreground/50">{m.location}</span>
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-foreground/60 bg-white/[0.02] p-2.5 rounded-lg border border-white/5">
+                    <span className="line-clamp-1">{m.education}</span>
+                  </div>
+                </div>
+                <div className="border-t border-white/[0.05] pt-3 mt-4">
+                  <Link
+                    href={`/leadership/${m.slug}`}
+                    className="flex items-center justify-between text-xs font-semibold text-foreground/80 hover:text-white transition-colors"
+                  >
+                    <span>View Profile</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-accent-orange group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

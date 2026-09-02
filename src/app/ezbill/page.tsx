@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
@@ -10,6 +11,8 @@ import {
   Cpu,
   Layers,
   UserCheck,
+  ShieldCheck,
+  Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -29,10 +32,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://prodevopz.jobsio.in/logo.jpg",
-        width: 512,
-        height: 512,
-        alt: "EzBill Billing and Business Management Software by ProDevOpz",
+        url: "https://prodevopz.jobsio.in/products/ezbill-app-icon.png",
+        width: 1024,
+        height: 1024,
+        alt: "EzBill business billing software app icon",
       },
     ],
   },
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     title: "EzBill — Billing & Business Management Software | ProDevOpz",
     description:
       "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz.",
-    images: ["https://prodevopz.jobsio.in/logo.jpg"],
+    images: ["https://prodevopz.jobsio.in/products/ezbill-app-icon.png"],
   },
 };
 
@@ -58,7 +61,7 @@ export default function EzBillPage() {
         "operatingSystem": "Web, Android, Windows, Cloud",
         "description": "EzBill (EZBill) is a business billing and management software product developed by ProDevOpz, with billing, invoicing, sales and analytics capabilities.",
         "url": "https://prodevopz.jobsio.in/ezbill",
-        "image": "https://prodevopz.jobsio.in/logo.jpg",
+        "image": "https://prodevopz.jobsio.in/products/ezbill-app-icon.png",
         "author": {
           "@type": "Organization",
           "@id": "https://prodevopz.jobsio.in/#organization",
@@ -134,7 +137,7 @@ export default function EzBillPage() {
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
-          { label: "Portfolio", href: "/portfolio" },
+          { label: "Products", href: "/portfolio" },
           { label: "EzBill" },
         ]}
       />
@@ -142,23 +145,35 @@ export default function EzBillPage() {
       {/* Hero / Header */}
       <header className="glass-panel border-white/[0.08] p-8 md:p-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-accent-orange/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="flex flex-col gap-5 relative z-10">
+        <div className="flex flex-col gap-6 relative z-10">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="text-[11px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/10 px-3.5 py-1 rounded-full border border-accent-orange/20">
-              Featured Software Product
+              Official Software Product
             </span>
             <span className="text-[11px] font-medium text-foreground/50 bg-white/[0.02] px-3 py-1 rounded-full border border-white/5">
               Developed by ProDevOpz
             </span>
           </div>
 
-          <div>
-            <h1 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-              EzBill (EZBill)
-            </h1>
-            <p className="text-sm sm:text-base font-semibold text-accent-purple mt-1.5">
-              Billing &amp; Business Management Software
-            </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <figure className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black shrink-0">
+              <Image
+                src="/products/ezbill-app-icon.png"
+                alt="EzBill business billing software app icon"
+                fill
+                priority
+                sizes="(max-width: 640px) 96px, 112px"
+                className="object-cover"
+              />
+            </figure>
+            <div>
+              <h1 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+                EzBill (EZBill)
+              </h1>
+              <p className="text-sm sm:text-base font-semibold text-accent-purple mt-1.5">
+                Business Billing, Invoicing &amp; Management Platform
+              </p>
+            </div>
           </div>
 
           <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-3xl pt-2 border-t border-white/[0.05]">
@@ -174,7 +189,14 @@ export default function EzBillPage() {
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
-              href="/founder/jalaluddin-master"
+              href="/s1pro"
+              className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
+            >
+              Explore S1Pro
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              href="/founder/ammar-master"
               className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
             >
               <UserCheck className="w-3.5 h-3.5 text-accent-orange" />
@@ -210,66 +232,53 @@ export default function EzBillPage() {
         </div>
       </section>
 
-      {/* Relationship with ProDevOpz & Founder */}
-      <section className="glass-panel border-white/[0.06] p-8 flex flex-col gap-6">
+      {/* Architecture & Tech Specs */}
+      <section className="glass-panel border-white/[0.06] p-8 md:p-10 flex flex-col gap-6">
         <div className="flex items-center gap-2.5 border-b border-white/[0.05] pb-4">
-          <Layers className="w-5 h-5 text-accent-blue" />
+          <Layers className="w-5 h-5 text-accent-purple" />
           <h2 className="font-display font-bold text-xl text-white">
-            Developed by ProDevOpz Technologies
+            Engineered by ProDevOpz
           </h2>
         </div>
+        <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+          EzBill is engineered from the ground up by the software engineering team at ProDevOpz. Utilizing modern web technologies, offline caching synchronization, and cloud databases, EzBill enables seamless billing operations across desktop, tablet, and mobile interfaces.
+        </p>
 
-        <div className="flex flex-col gap-4 text-xs sm:text-sm text-foreground/70 leading-relaxed">
-          <p>
-            EzBill was engineered under the technical leadership of <Link href="/founder/jalaluddin-master" className="text-accent-orange hover:underline font-semibold">Md Jalaluddin Master (Jalaluddin Master / Ammar Master)</Link> at ProDevOpz. It provides a robust, scalable architecture that eliminates manual paperwork and inventory leakages.
-          </p>
-          <p>
-            ProDevOpz customizes and deploys EzBill for diverse retail, restaurant, wholesale, and multi-warehouse operations.
-          </p>
-        </div>
-
-        <div className="pt-2">
-          <span className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider block mb-3">
-            Technology Architecture
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {["Next.js", "React", "Node.js", "PostgreSQL", "Prisma", "Docker", "REST APIs", "Tailwind CSS"].map((t, idx) => (
-              <span
-                key={idx}
-                className="text-xs font-semibold text-white bg-white/[0.03] border border-white/10 px-3 py-1.5 rounded-lg"
-              >
-                {t}
-              </span>
-            ))}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl flex flex-col gap-1">
+            <span className="text-[10px] uppercase font-bold text-accent-orange">Deployment</span>
+            <span className="text-xs font-semibold text-white">Cloud &amp; On-Premise POS</span>
+          </div>
+          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl flex flex-col gap-1">
+            <span className="text-[10px] uppercase font-bold text-accent-purple">Security</span>
+            <span className="text-xs font-semibold text-white">Role-Based Access Control</span>
+          </div>
+          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl flex flex-col gap-1">
+            <span className="text-[10px] uppercase font-bold text-accent-blue">Compliance</span>
+            <span className="text-xs font-semibold text-white">GST &amp; Tax Standard Ready</span>
           </div>
         </div>
       </section>
 
-      {/* Internal Navigation Footer */}
+      {/* Call to Action */}
       <section className="glass-panel border-white/[0.06] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <div className="flex flex-col gap-1.5 max-w-xl">
+        <div className="flex flex-col gap-2 max-w-xl">
           <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider">
-            ProDevOpz Solutions
+            Enterprise Solutions
           </span>
-          <h3 className="font-display font-bold text-base text-white">
-            Custom Software &amp; ERP Development
-          </h3>
-          <p className="text-xs text-foreground/60">
-            Learn more about how ProDevOpz builds tailored software, AI solutions, and enterprise platforms.
+          <h2 className="font-display font-bold text-lg text-white">
+            Need Custom Features for EzBill?
+          </h2>
+          <p className="text-xs text-foreground/60 leading-relaxed">
+            ProDevOpz customizes EzBill for enterprise retail chains, franchise networks, and multi-location warehouses.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <Link
-            href="/portfolio"
-            className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
+            href="/pricing"
+            className="flex items-center gap-1.5 text-xs font-bold text-white bg-accent-orange px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
           >
-            All Projects
-          </Link>
-          <Link
-            href="/"
-            className="flex items-center gap-1.5 text-xs font-bold text-white bg-accent-orange px-4 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
-          >
-            ProDevOpz Home
+            Get Custom Quote
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

@@ -5,20 +5,45 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
 ## Website & Web Presence
 
 - Official Website: https://prodevopz.jobsio.in/
+- Leadership Overview: https://prodevopz.jobsio.in/leadership
 - Founder Profile: https://prodevopz.jobsio.in/founder/ammar-master
-- Featured Software Product (EzBill): https://prodevopz.jobsio.in/ezbill
+- Featured Product — EzBill: https://prodevopz.jobsio.in/ezbill
+- Featured Product — S1Pro: https://prodevopz.jobsio.in/s1pro
+- Product & Portfolio Directory: https://prodevopz.jobsio.in/portfolio
 - Founder Official Photograph: https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg
 
-## Leadership & Founder
+## Executive Leadership & Founder
 
 - Founder: Ammar Master (also known as Jalaluddin Master)
-- Title: Founder & Software Engineer at ProDevOpz
-- Profile: https://prodevopz.jobsio.in/founder/ammar-master
+  - Title: Founder & Software Engineer at ProDevOpz
+  - Profile: https://prodevopz.jobsio.in/founder/ammar-master
 
-## Software Products & Projects
+- Chief Executive Officer (CEO): Saad Mulla
+  - Location: Dodda Ballapur, Karnataka, India
+  - University: Rani Channamma University (RCUB)
+  - Profile: https://prodevopz.jobsio.in/leadership/saad-mulla
 
-- EzBill (EZBill / EZ Bill): Business management, GST billing, inventory tracking, order management, and revenue analytics software suite engineered by ProDevOpz.
-- Enterprise ERP & POS Systems: Cloud-synchronized point-of-sale, HRMS, and multi-location retail/restaurant billing engines.
+- Co-Founder: Ruvaid Shaikh
+  - Location: Sangli, Maharashtra, India
+  - University: Sanjay Ghodawat University (2022 - 2026)
+  - Profile: https://prodevopz.jobsio.in/leadership/ruvaid-shaikh
+
+- Managing Director (MD): Vaibhav Yalamalle
+  - Location: Athani, Karnataka, India
+  - Education: KLE'S S.C.P Arts & D.D. Shirol Commerce College, Mahalingpur (PG)
+  - Profile: https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle
+
+## Flagship Software Products
+
+- EzBill (EZBill / EZ Bill):
+  - Description: Business billing, invoicing, inventory tracking, order management, and revenue analytics software suite engineered by ProDevOpz.
+  - URL: https://prodevopz.jobsio.in/ezbill
+  - App Icon: https://prodevopz.jobsio.in/products/ezbill-app-icon.png
+
+- S1Pro:
+  - Description: Field service workforce management platform connecting customers, service professionals/technicians, and business administrators. Features service discovery, instant appointment booking, real-time job tracking, direct communication, technician profiles, and dispatch command center.
+  - URL: https://prodevopz.jobsio.in/s1pro
+  - App Icon: https://prodevopz.jobsio.in/products/s1pro-app-icon.png
 
 ## Primary Services
 

@@ -6,9 +6,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/about",
+    "/leadership",
+    "/leadership/saad-mulla",
+    "/leadership/ruvaid-shaikh",
+    "/leadership/vaibhav-yalamalle",
     "/founder/ammar-master",
     "/founder/jalaluddin-master",
     "/ezbill",
+    "/s1pro",
     "/portfolio",
     "/pricing",
     "/blog",
@@ -28,6 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "daily" : "weekly",
-    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/internship" || route.startsWith("/founder") ? 0.9 : 0.7,
+    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/s1pro" || route === "/internship" || route.startsWith("/founder") || route.startsWith("/leadership") ? 0.9 : 0.7,
   }));
 }
