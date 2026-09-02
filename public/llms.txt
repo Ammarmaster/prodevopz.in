@@ -1,14 +1,31 @@
 # ProDevOpz Technologies
 
-ProDevOpz is a premium custom software development company, mobile app builder, and artificial intelligence integration engineering agency. 
+ProDevOpz is a custom software development company, technology solutions provider, mobile app builder, and artificial intelligence integration engineering agency.
+
+## Website & Web Presence
+
+- Official Website: https://prodevopz.jobsio.in/
+- Founder Profile: https://prodevopz.jobsio.in/founder/ammar-master
+- Featured Product (EzBill): https://prodevopz.jobsio.in/ezbill
+
+## Leadership & Founder
+
+- Founder: Ammar Master (also known as Jalaluddin Master)
+- Title: Founder & Software Engineer at ProDevOpz
+- Profile: https://prodevopz.jobsio.in/founder/ammar-master
+
+## Software Products & Projects
+
+- EzBill (EZBill): Business management, GST billing, inventory tracking, order management, and revenue analytics software suite engineered by ProDevOpz.
+- Enterprise ERP & POS Systems: Cloud-synchronized point-of-sale, HRMS, and multi-location retail/restaurant billing engines.
 
 ## Primary Services
 
-- Web App Development: State-of-the-art Next.js & React systems optimized for performance, scalability, and 100% Lighthouse audit scores.
-- Mobile App Development: Cross-platform Flutter & React Native interfaces with native biometric security and offline synchronizations.
-- AI Development: Custom Large Language Model (LLM) fine-tunings, Retrieval-Augmented Generation (RAG) pipelines, intelligent support agents, and vector databases.
-- Cloud Infrastructure & DevOps: Docker/Kubernetes container orchestration, continuous deployment automation, and load balancers on AWS, GCP, and Azure.
-- Custom Software & ERP Systems: Enterprise resource plannings, restaurant POS portals, and CRM architectures designed to streamline operations.
+- Web App Development: Next.js & React platforms engineered for speed, scalability, and 100% Lighthouse audit scores.
+- Mobile App Development: Cross-platform Flutter & React Native interfaces with native security and offline synchronization.
+- AI Development: Custom LLM integrations, Retrieval-Augmented Generation (RAG) pipelines, and intelligent support agents.
+- Cloud Infrastructure & DevOps: Docker/Kubernetes container orchestration and automated CI/CD pipelines on AWS, GCP, and Azure.
+- Custom Software Engineering: Bespoke software architectures tailored to business workflows.
 
 ## Internship Cohorts
 
@@ -16,7 +33,6 @@ ProDevOpz hosts free online technical internships in Web Development, Mobile Dev
 
 ## Contact & Registry
 
-- Website: https://prodevopz.in
-- Registry Office: Belagavi, Karnataka, India
+- Website: https://prodevopz.jobsio.in/
 - Contact Email: contactprodevopz@gmail.com
-- Verification Portal: https://prodevopz.in/verify-certificate
+- Verification Portal: https://prodevopz.jobsio.in/verify-certificate

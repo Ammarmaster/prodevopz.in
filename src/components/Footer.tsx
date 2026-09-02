@@ -5,6 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const services = [
+    { name: "EzBill Billing Software", href: "/ezbill" },
     { name: "AI Development", href: "/services/ai-development" },
     { name: "Mobile App Development", href: "/services/mobile-development" },
     { name: "Web App Development", href: "/services/web-development" },
@@ -15,6 +16,8 @@ export default function Footer() {
 
   const companyLinks = [
     { name: "About Story", href: "/about" },
+    { name: "Founder Profile", href: "/founder/ammar-master" },
+    { name: "EzBill Product", href: "/ezbill" },
     { name: "Project Portfolio", href: "/portfolio" },
     { name: "Pricing Estimate", href: "/pricing" },
     { name: "Tech Blog", href: "/blog" },
@@ -24,7 +27,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#050505] border-t border-white/[0.05] pt-16 pb-8 px-4 md:px-8 mt-auto relative z-10">
+    <footer className="w-full bg-[#050505] border-t border-white/[0.05] pt-16 pb-8 px-4 md:px-8 mt-auto relative z-10 text-left">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         {/* Brand & Certifications */}
         <div className="flex flex-col gap-4">
@@ -37,7 +40,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-xs text-foreground/60 leading-relaxed max-w-xs">
-            Building Intelligent Software for the Future. Transforming complex ideas into production-ready digital products using AI-first architectures.
+            Building Intelligent Software for the Future. Transforming complex ideas into production-ready digital products and software solutions like EzBill.
           </p>
           <div className="flex flex-col gap-2 mt-2">
             <div className="flex items-center gap-2 text-xs text-foreground/80">
@@ -54,7 +57,7 @@ export default function Footer() {
         {/* Services */}
         <div>
           <h4 className="font-display text-sm font-semibold text-white tracking-wider uppercase mb-4">
-            Services
+            Services &amp; Products
           </h4>
           <ul className="flex flex-col gap-2.5">
             {services.map((item) => (
@@ -103,13 +106,11 @@ export default function Footer() {
               contactprodevopz@gmail.com
             </a>
             <a
-              href="https://prodevopz.in"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://prodevopz.jobsio.in"
               className="flex items-center gap-2 text-xs text-foreground/70 hover:text-white transition-colors"
             >
               <Globe className="w-4 h-4 text-accent-blue" />
-              prodevopz.in
+              prodevopz.jobsio.in
             </a>
           </div>
           <div className="flex items-center gap-4 mt-2">

@@ -1,4 +1,25 @@
-import { FolderGit, ArrowUpRight, Star, Zap, Monitor, Smartphone, Cpu } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { ArrowUpRight, Zap, Monitor, Smartphone, Cpu, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Software Projects & Portfolio | ProDevOpz",
+  description:
+    "Explore digital products and custom software solutions engineered by ProDevOpz, including EzBill billing software, AI platforms, and mobile applications.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+  openGraph: {
+    title: "Software Projects & Portfolio | ProDevOpz",
+    description:
+      "Explore digital products and custom software solutions engineered by ProDevOpz, including EzBill billing software, AI platforms, and mobile applications.",
+    url: "https://prodevopz.jobsio.in/portfolio",
+    siteName: "ProDevOpz",
+    locale: "en_IN",
+    type: "website",
+  },
+};
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -15,6 +36,7 @@ export default function Portfolio() {
       tech: ["Next.js 15", "FastAPI", "OpenAI", "Cloudflare R2", "Prisma"],
       roi: "65% time savings in video production",
       icon: <Cpu className="w-5 h-5 text-accent-orange" />,
+      href: "/services/ai-development",
     },
     {
       title: "Fintech Mobile Wallet",
@@ -23,19 +45,24 @@ export default function Portfolio() {
       tech: ["React Native", "TypeScript", "Node.js", "Redis", "AWS Lambda"],
       roi: "Over 50,000 active transactions verified daily",
       icon: <Smartphone className="w-5 h-5 text-accent-purple" />,
+      href: "/services/mobile-development",
     },
     {
-      title: "Enterprise ERP System",
-      category: "ERP & Dashboards",
-      desc: "Custom hospital and retail ERP inventory management system with real-time billing, HRMS, and GST reporting.",
+      title: "EzBill — Enterprise Billing & ERP",
+      category: "Billing & ERP",
+      desc: "Custom retail and enterprise ERP billing software with real-time GST invoicing, inventory tracking, and revenue analytics.",
       tech: ["Next.js", "Express", "PostgreSQL", "Tailwind CSS v4", "Docker"],
-      roi: "Unified 14 locations into 1 singular inventory panel",
+      roi: "Unified billing & order workflows with real-time sales reporting",
       icon: <Monitor className="w-5 h-5 text-accent-blue" />,
+      href: "/ezbill",
     },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col gap-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col gap-16 text-left">
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={[{ label: "Portfolio" }]} />
+
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto flex flex-col gap-4">
         <span className="text-xs font-bold text-accent-blue uppercase tracking-widest bg-accent-blue/10 px-3.5 py-1.5 rounded-full w-fit mx-auto">
@@ -45,7 +72,7 @@ export default function Portfolio() {
           Our Shipped Products
         </h1>
         <p className="text-sm text-foreground/50 leading-relaxed">
-          Explore custom solutions engineered by our senior developers. We combine aesthetic UI designs with scalable backend infrastructure.
+          Explore custom solutions engineered by ProDevOpz. We combine aesthetic UI designs with scalable backend infrastructure.
         </p>
       </div>
 
@@ -85,11 +112,14 @@ export default function Portfolio() {
               </div>
               <div className="flex items-center justify-between text-xs font-semibold text-foreground/60 mt-2">
                 <span className="flex items-center gap-1 hover:text-white cursor-pointer transition-colors">
-                  <GithubIcon className="w-4 h-4" /> Code Architecture
+                  <GithubIcon className="w-4 h-4" /> Architecture
                 </span>
-                <span className="flex items-center gap-0.5 text-accent-orange hover:text-white cursor-pointer transition-all">
-                  Live Preview <ArrowUpRight className="w-3.5 h-3.5" />
-                </span>
+                <Link
+                  href={project.href}
+                  className="flex items-center gap-0.5 text-accent-orange hover:text-white transition-all font-bold"
+                >
+                  View Product <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>

@@ -11,9 +11,14 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const blog = await db.blog.findUnique({
-    where: { slug },
-  });
+  let blog = null;
+  try {
+    blog = await db.blog.findUnique({
+      where: { slug },
+    });
+  } catch {
+    blog = null;
+  }
 
   if (!blog) {
     return {
@@ -29,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: blog.title,
       description: blog.content.substring(0, 150) || "ProDevOpz publications.",
-      url: `https://prodevopz.in/blog/${slug}`,
+      url: `https://prodevopz.jobsio.in/blog/${slug}`,
       siteName: "ProDevOpz",
       type: "article",
       publishedTime: new Date(blog.createdAt).toISOString(),
@@ -42,9 +47,14 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   
   // Find blog in database
-  const blog = await db.blog.findUnique({
-    where: { slug },
-  });
+  let blog = null;
+  try {
+    blog = await db.blog.findUnique({
+      where: { slug },
+    });
+  } catch {
+    blog = null;
+  }
 
   if (!blog) {
     notFound();
@@ -55,7 +65,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": blog.title,
-    "image": "https://prodevopz.in/logo.jpg",
+    "image": "https://prodevopz.jobsio.in/logo.jpg",
     "genre": blog.category,
     "keywords": `${blog.category}, software engineering, prodevopz`,
     "publisher": {
@@ -63,10 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
       "name": "ProDevOpz",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://prodevopz.in/logo.jpg"
+        "url": "https://prodevopz.jobsio.in/logo.jpg"
       }
     },
-    "url": `https://prodevopz.in/blog/${slug}`,
+    "url": `https://prodevopz.jobsio.in/blog/${slug}`,
     "datePublished": new Date(blog.createdAt).toISOString(),
     "dateModified": new Date(blog.createdAt).toISOString(),
     "author": {

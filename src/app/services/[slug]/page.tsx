@@ -656,7 +656,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${data.title} | ProDevOpz`,
       description: data.desc,
-      url: `https://prodevopz.in/services/${slug}`,
+      url: `https://prodevopz.jobsio.in/services/${slug}`,
       siteName: "ProDevOpz",
       locale: "en_IN",
       type: "website",
@@ -679,16 +679,11 @@ export default async function ServiceSlugPage({ params }: Props) {
     "name": data.title,
     "description": data.desc,
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "ProDevOpz Technologies",
-      "url": "https://prodevopz.in",
-      "image": "https://prodevopz.in/logo.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      }
+      "@type": "Organization",
+      "name": "ProDevOpz",
+      "url": "https://prodevopz.jobsio.in/",
+      "logo": "https://prodevopz.jobsio.in/logo.jpg",
+      "image": "https://prodevopz.jobsio.in/logo.jpg"
     },
     "areaServed": "IN",
     "offers": {

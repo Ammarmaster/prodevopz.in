@@ -6,48 +6,61 @@ import MouseGlow from "@/components/MouseGlow";
 import AIChatbot from "@/components/AIChatbot";
 
 export const metadata: Metadata = {
-  title: "ProDevOpz | Custom Software Development, Internships & AI Solutions",
+  title: {
+    default: "ProDevOpz | Software Development & Technology Company",
+    template: "%s | ProDevOpz",
+  },
   description:
-    "ProDevOpz is a leading custom software development agency, mobile app builder, and AI engineering firm. Join our industry-recognized free internships with verified MSME & ISO certificates of completion.",
+    "ProDevOpz is a custom software development and technology company building scalable web applications, mobile apps, AI solutions, and software products including EzBill.",
   keywords: [
-    "prodevopz",
-    "internship",
-    "free internship",
-    "certificate",
-    "free certificate",
-    "software making agency",
-    "custom software development company",
-    "software development agency",
-    "free internship with certificate",
-    "online web development internship",
-    "app development internship",
-    "cloud and devops internship",
-    "msme certified certificate",
-    "iso certified certificate",
-    "verified certificate registry",
+    "ProDevOpz",
+    "ProDevOpz company",
+    "ProDevOpz software",
+    "ProDevOpz jobs",
+    "EzBill",
+    "EZBill",
+    "EZ Bill",
+    "software development company",
+    "custom software development",
+    "technology company",
+    "AI development",
+    "mobile app development",
+    "web development company",
+    "enterprise software",
+    "billing software",
+    "MSME certified software firm",
   ],
   manifest: "/manifest.json",
   verification: {
     google: "cPtP_zDyyYBryhpHiTEuNMxlYvTjaKErYo9cMyyPLI4",
   },
-  metadataBase: new URL("https://prodevopz.in"),
+  metadataBase: new URL("https://prodevopz.jobsio.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "ProDevOpz | Custom Software Development, Internships & AI Solutions",
+    title: "ProDevOpz | Software Development & Technology Company",
     description:
-      "ProDevOpz is a leading custom software development agency and AI engineering firm. Apply for our free internships with verified MSME & ISO certificates.",
-    url: "https://prodevopz.in",
+      "ProDevOpz is a custom software development and technology company building scalable web applications, mobile apps, AI solutions, and software products including EzBill.",
+    url: "https://prodevopz.jobsio.in",
     siteName: "ProDevOpz",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://prodevopz.jobsio.in/logo.jpg",
+        width: 512,
+        height: 512,
+        alt: "ProDevOpz Software Development Company",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ProDevOpz | Custom Software & Internships",
+    title: "ProDevOpz | Software Development & Technology Company",
     description:
-      "Leading custom software development agency and AI engineering firm. Join our free internships with verified certificates.",
+      "ProDevOpz is a custom software development and technology company building scalable web applications, mobile apps, AI solutions, and software products including EzBill.",
+    images: ["https://prodevopz.jobsio.in/logo.jpg"],
   },
 };
 

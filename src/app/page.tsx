@@ -13,6 +13,8 @@ import {
   TrendingUp,
   Award,
   Layers,
+  UserCheck,
+  Code2,
 } from "lucide-react";
 
 export default function Home() {
@@ -76,24 +78,70 @@ export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "ProDevOpz Technologies",
-    "image": "https://prodevopz.in/logo.jpg",
-    "url": "https://prodevopz.in",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressRegion": "Karnataka",
-      "addressCountry": "IN"
-    },
-    "description": "ProDevOpz is a leading custom software development agency, mobile app builder, and AI engineering firm. Join our industry-recognized free internships with verified MSME & ISO certificates of completion.",
-    "keywords": "prodevopz, internship, free internship, certificate, free certificate, software making agency, custom software development",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "price": "0",
-      "description": "Industry-grade Free Internship with Verified Certificates"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://prodevopz.jobsio.in/#organization",
+        "name": "ProDevOpz",
+        "legalName": "ProDevOpz Technologies",
+        "url": "https://prodevopz.jobsio.in/",
+        "logo": "https://prodevopz.jobsio.in/logo.jpg",
+        "image": "https://prodevopz.jobsio.in/logo.jpg",
+        "description": "ProDevOpz is a custom software development and technology company building scalable web applications, mobile apps, AI solutions, and software products including EzBill.",
+        "sameAs": [
+          "https://linkedin.com/company/prodevopz",
+          "https://instagram.com/prodevopz.in",
+          "https://github.com/Ammarmaster"
+        ],
+        "founder": {
+          "@type": "Person",
+          "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
+          "name": "Ammar Master",
+          "alternateName": "Jalaluddin Master",
+          "jobTitle": "Founder & Software Engineer",
+          "url": "https://prodevopz.jobsio.in/founder/ammar-master"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contactprodevopz@gmail.com",
+          "contactType": "customer service"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://prodevopz.jobsio.in/#website",
+        "url": "https://prodevopz.jobsio.in/",
+        "name": "ProDevOpz",
+        "description": "Official Web Presence of ProDevOpz - Custom Software Development & Technology Solutions.",
+        "publisher": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
+        "name": "Ammar Master",
+        "alternateName": "Jalaluddin Master",
+        "jobTitle": "Founder & Software Engineer",
+        "worksFor": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "url": "https://prodevopz.jobsio.in/founder/ammar-master"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://prodevopz.jobsio.in/ezbill#software",
+        "name": "EzBill",
+        "alternateName": ["EZBill", "EZ Bill"],
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, Windows, Cloud",
+        "description": "EzBill is an enterprise billing, inventory management, and business analytics software platform developed by ProDevOpz.",
+        "url": "https://prodevopz.jobsio.in/ezbill",
+        "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      }
+    ]
   };
 
   return (
@@ -113,7 +161,7 @@ export default function Home() {
             {/* Badge */}
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] text-xs font-semibold text-foreground/80 shadow-md">
               <Sparkles className="w-3.5 h-3.5 text-accent-orange animate-spin" />
-              <span>Certified MSME & ISO Software Firm</span>
+              <span>Certified MSME &amp; ISO Software Firm</span>
             </div>
 
             {/* Heading */}
@@ -203,7 +251,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div key={i} className="glass-card p-6 flex flex-col justify-between">
+            <div key={i} className="glass-card p-6 flex flex-col justify-between text-left">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-6">
                   {service.icon}
@@ -227,7 +275,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Project Estimator Section */}
+      {/* 5. Meet the Founder Section */}
+      <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
+        <div className="glass-panel border-white/[0.08] p-8 md:p-12 relative overflow-hidden text-left">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-accent-purple/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="lg:col-span-8 flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/10 px-3 py-1 rounded-full border border-accent-orange/20">
+                  Leadership
+                </span>
+                <span className="text-[10px] font-medium text-foreground/50">
+                  ProDevOpz Engineering
+                </span>
+              </div>
+
+              <div>
+                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
+                  Meet the Founder
+                </h2>
+                <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                  Ammar Master{" "}
+                  <span className="text-xs sm:text-sm font-semibold text-accent-purple">
+                    (Also known as Jalaluddin Master)
+                  </span>
+                </h3>
+                <p className="text-xs font-semibold text-foreground/70 mt-0.5">
+                  Founder &amp; Software Engineer at ProDevOpz
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed max-w-2xl">
+                Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz. He leads technical architecture, system design, and AI integrations, driving high-performance software engineering for startups and modern businesses.
+              </p>
+
+              <div className="pt-2">
+                <Link
+                  href="/founder/ammar-master"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-5 py-3 rounded-xl transition-all"
+                >
+                  <UserCheck className="w-4 h-4 text-accent-orange" />
+                  Meet Ammar Master, Founder of ProDevOpz
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-4 glass-card p-6 border-white/[0.06] flex flex-col gap-3">
+              <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider">
+                Engineering Specialties
+              </span>
+              <ul className="flex flex-col gap-2.5 text-xs text-foreground/70">
+                <li className="flex items-center gap-2">
+                  <Code2 className="w-3.5 h-3.5 text-accent-orange shrink-0" />
+                  <span>Next.js &amp; Full-Stack Web Development</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-accent-purple shrink-0" />
+                  <span>Applied AI &amp; LLM Workflows</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Server className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Cloud DevOps &amp; Container Architecture</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Project Estimator Section */}
       <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
         <div className="flex flex-col items-center text-center gap-4 mb-12">
           <span className="text-xs font-bold text-accent-purple uppercase tracking-widest bg-accent-purple/10 px-3.5 py-1.5 rounded-full">
@@ -243,9 +361,9 @@ export default function Home() {
         <ProjectEstimator />
       </section>
 
-      {/* 6. Why Choose Us */}
+      {/* 7. Why Choose Us */}
       <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-        <div className="glass-panel border-white/[0.06] p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="glass-panel border-white/[0.06] p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
           <div className="flex flex-col gap-6">
             <span className="text-xs font-bold text-accent-blue uppercase tracking-widest bg-accent-blue/10 px-3.5 py-1.5 rounded-full w-fit">
               ProDevOpz Advantage
@@ -307,7 +425,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Call To Action */}
+      {/* 8. Call To Action */}
       <section className="px-4 md:px-8 max-w-7xl mx-auto w-full mb-12">
         <div className="glass-panel border-white/[0.06] p-8 sm:p-12 text-center flex flex-col items-center gap-6 relative overflow-hidden bg-gradient-to-br from-accent-orange/5 via-accent-purple/5 to-accent-blue/5">
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white">

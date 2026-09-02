@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         "/client",
       ],
     },
-    sitemap: "https://prodevopz.in/sitemap.xml",
+    sitemap: "https://prodevopz.jobsio.in/sitemap.xml",
   };
 }

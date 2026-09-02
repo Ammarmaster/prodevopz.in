@@ -20,13 +20,13 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://prodevopz.in"
+        "item": "https://prodevopz.jobsio.in"
       },
       ...items.map((item, idx) => ({
         "@type": "ListItem",
         "position": idx + 2,
         "name": item.label,
-        "item": item.href ? `https://prodevopz.in${item.href}` : undefined
+        "item": item.href ? `https://prodevopz.jobsio.in${item.href}` : undefined
       }))
     ]
   };

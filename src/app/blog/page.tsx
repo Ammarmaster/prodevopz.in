@@ -3,11 +3,15 @@ import Link from "next/link";
 import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
 
 export default async function BlogPage() {
-  // Query seeded blogs directly from SQLite
-  const blogs = await db.blog.findMany({
-    where: { published: true },
-    orderBy: { createdAt: "desc" },
-  });
+  let blogs: any[] = [];
+  try {
+    blogs = await db.blog.findMany({
+      where: { published: true },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch {
+    blogs = [];
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col gap-12">
