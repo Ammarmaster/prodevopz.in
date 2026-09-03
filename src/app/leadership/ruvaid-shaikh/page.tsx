@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
-        width: 800,
-        height: 1000,
+        width: 1024,
+        height: 1007,
         alt: "Ruvaid Shaikh, Co-Founder of ProDevOpz",
       },
     ],
@@ -172,13 +172,13 @@ export default function RuvaidShaikhPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
           {/* Photo Column */}
           <div className="lg:col-span-4 flex flex-col items-center">
-            <figure className="relative w-full max-w-[260px] sm:max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
+            <figure className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
               <Image
                 src="/team/ruvaid-shaikh-cofounder-prodevopz.jpg"
                 alt="Ruvaid Shaikh, Co-Founder of ProDevOpz"
                 fill
                 priority
-                sizes="(max-width: 768px) 260px, 280px"
+                sizes="(max-width: 768px) 280px, 320px"
                 className="object-cover object-top hover:scale-105 transition-transform duration-500"
               />
             </figure>

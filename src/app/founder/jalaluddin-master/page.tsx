@@ -17,12 +17,13 @@ import {
   UserCheck,
   Building,
   ShieldCheck,
+  Wrench,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Md Jalaluddin Master (Jalaluddin Master) — Founder of ProDevOpz",
+  title: "Md Jalaluddin Master — Founder of ProDevOpz",
   description:
-    "Md Jalaluddin Master, also known as Jalaluddin Master and Ammar Master, is the Founder and Lead Software Engineer behind ProDevOpz, systems architecture, and EzBill billing software.",
+    "Md Jalaluddin Master (also known as Jalaluddin Master and Mohammad Jalaluddin Master) is the Founder and Lead Software Engineer behind ProDevOpz and EzBill billing software.",
   alternates: {
     canonical: "/founder/jalaluddin-master",
   },
@@ -38,9 +39,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Md Jalaluddin Master (Jalaluddin Master) — Founder of ProDevOpz",
+    title: "Md Jalaluddin Master — Founder of ProDevOpz",
     description:
-      "Md Jalaluddin Master, also known as Jalaluddin Master and Ammar Master, is the Founder and Lead Software Engineer behind ProDevOpz and EzBill billing software.",
+      "Md Jalaluddin Master (also known as Jalaluddin Master and Mohammad Jalaluddin Master) is the Founder and Lead Software Engineer behind ProDevOpz and EzBill billing software.",
     url: "https://prodevopz.jobsio.in/founder/jalaluddin-master",
     siteName: "ProDevOpz",
     locale: "en_IN",
@@ -50,15 +51,15 @@ export const metadata: Metadata = {
         url: "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
         width: 1000,
         height: 1000,
-        alt: "Md Jalaluddin Master (Jalaluddin Master), Founder of ProDevOpz",
+        alt: "Md Jalaluddin Master - Founder of ProDevOpz",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Md Jalaluddin Master (Jalaluddin Master) — Founder of ProDevOpz",
+    title: "Md Jalaluddin Master — Founder of ProDevOpz",
     description:
-      "Md Jalaluddin Master, also known as Jalaluddin Master and Ammar Master, is the Founder and Lead Software Engineer behind ProDevOpz and EzBill.",
+      "Md Jalaluddin Master is the Founder and Lead Software Engineer behind ProDevOpz and EzBill.",
     images: ["https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg"],
   },
 };
@@ -71,7 +72,7 @@ export default function JalaluddinMasterPage() {
         "@type": "ProfilePage",
         "@id": "https://prodevopz.jobsio.in/founder/jalaluddin-master",
         "url": "https://prodevopz.jobsio.in/founder/jalaluddin-master",
-        "name": "Md Jalaluddin Master (Jalaluddin Master) — Founder of ProDevOpz",
+        "name": "Md Jalaluddin Master — Founder of ProDevOpz",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://prodevopz.jobsio.in/#website",
@@ -89,11 +90,10 @@ export default function JalaluddinMasterPage() {
         "alternateName": [
           "Jalaluddin Master",
           "Mohammad Jalaluddin Master",
-          "Md. Jalaluddin Master",
-          "Ammar Master"
+          "Md. Jalaluddin Master"
         ],
         "jobTitle": "Founder & Lead Software Engineer",
-        "description": "Md Jalaluddin Master (also known as Jalaluddin Master and Ammar Master) is the Founder and Lead Software Engineer behind ProDevOpz, directing full-stack architecture, applied AI systems, and software products like EzBill.",
+        "description": "Md Jalaluddin Master (also known as Jalaluddin Master and Mohammad Jalaluddin Master) is the Founder and Lead Software Engineer behind ProDevOpz, directing full-stack software architecture, applied AI systems, and software products like EzBill.",
         "url": "https://prodevopz.jobsio.in/founder/jalaluddin-master",
         "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
         "worksFor": {
@@ -103,7 +103,6 @@ export default function JalaluddinMasterPage() {
           "url": "https://prodevopz.jobsio.in/"
         },
         "sameAs": [
-          "https://github.com/Ammarmaster",
           "https://linkedin.com/company/prodevopz",
           "https://instagram.com/prodevopz.in"
         ],
@@ -190,7 +189,7 @@ export default function JalaluddinMasterPage() {
             <figure className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
               <Image
                 src="/ammar-master-jalaluddin-master-founder-prodevopz.jpg"
-                alt="Md Jalaluddin Master (Jalaluddin Master), Founder of ProDevOpz"
+                alt="Md Jalaluddin Master - Founder of ProDevOpz"
                 fill
                 priority
                 sizes="(max-width: 768px) 280px, 320px"
@@ -218,7 +217,7 @@ export default function JalaluddinMasterPage() {
                 Md Jalaluddin Master
               </h1>
               <p className="text-sm sm:text-base font-semibold text-accent-purple mt-1.5">
-                Also known as Jalaluddin Master &amp; Ammar Master
+                Also known as Jalaluddin Master &amp; Mohammad Jalaluddin Master
               </p>
             </div>
 
@@ -233,7 +232,7 @@ export default function JalaluddinMasterPage() {
             </p>
 
             <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-2xl pt-2 border-t border-white/[0.05]">
-              Md Jalaluddin Master (also known professionally as Jalaluddin Master and Ammar Master) is the Founder and Lead Software Engineer behind ProDevOpz. As principal technologist, Md Jalaluddin Master leads technical architecture, system design, and software product engineering including the EzBill billing platform.
+              Md Jalaluddin Master (also known professionally as Jalaluddin Master and Mohammad Jalaluddin Master) is the Founder and Lead Software Engineer behind ProDevOpz. As principal technologist, Md Jalaluddin Master directs technical architecture, system design, and software product engineering including the EzBill billing platform.
             </p>
 
             {/* Social / Direct Connect */}
@@ -253,16 +252,6 @@ export default function JalaluddinMasterPage() {
                 Explore EzBill Software
               </Link>
               <a
-                href="https://github.com/Ammarmaster"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold text-foreground/75 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2 rounded-xl border border-white/5 transition-colors"
-              >
-                <Terminal className="w-3.5 h-3.5 text-accent-purple" />
-                GitHub (@Ammarmaster)
-                <ExternalLink className="w-3 h-3 text-foreground/40" />
-              </a>
-              <a
                 href="https://linkedin.com/company/prodevopz"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -272,6 +261,12 @@ export default function JalaluddinMasterPage() {
                 LinkedIn (ProDevOpz)
                 <ExternalLink className="w-3 h-3 text-foreground/40" />
               </a>
+              <Link
+                href="/leadership"
+                className="text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2 rounded-xl border border-white/5 transition-colors"
+              >
+                Leadership Directory
+              </Link>
             </div>
           </div>
         </div>
@@ -287,13 +282,13 @@ export default function JalaluddinMasterPage() {
         </div>
         <div className="flex flex-col gap-4 text-xs sm:text-sm text-foreground/70 leading-relaxed">
           <p>
-            Md Jalaluddin Master (also known as Jalaluddin Master and Ammar Master) founded ProDevOpz (ProDevOpz Technologies) with the vision of providing high-performance software engineering, AI-driven architectures, and scalable cloud systems to startups and expanding enterprises.
+            Md Jalaluddin Master (also known as Jalaluddin Master and Mohammad Jalaluddin Master) founded ProDevOpz (ProDevOpz Technologies) with the vision of providing high-performance software engineering, AI-driven architectures, and scalable cloud systems to startups and expanding enterprises.
           </p>
           <p>
             With extensive hands-on expertise in full-stack web development, DevOps automation, and applied artificial intelligence, Md Jalaluddin Master oversees technical standards, database architectures, and production reliability across all software deliverables.
           </p>
           <p>
-            Under his leadership, ProDevOpz has launched bespoke web applications, mobile platforms, and software products including <Link href="/ezbill" className="text-accent-orange hover:underline font-semibold">EzBill (EZBill)</Link>, adhering to registered MSME and ISO-compliant engineering benchmarks.
+            Under his leadership, ProDevOpz has launched bespoke web applications, mobile platforms, and software products including <Link href="/ezbill" className="text-accent-orange hover:underline font-semibold">EzBill (EZBill)</Link> and <Link href="/s1pro" className="text-accent-blue hover:underline font-semibold">S1Pro</Link>, adhering to registered MSME and ISO-compliant engineering benchmarks.
           </p>
         </div>
       </section>
@@ -324,17 +319,17 @@ export default function JalaluddinMasterPage() {
         </div>
       </section>
 
-      {/* Relationship with ProDevOpz & EzBill */}
+      {/* Relationship with ProDevOpz & Products */}
       <section className="glass-panel border-white/[0.06] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="flex flex-col gap-2 max-w-xl">
           <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider">
             Featured Products &amp; Services
           </span>
           <h2 className="font-display font-bold text-lg text-white">
-            Explore EzBill &amp; ProDevOpz Solutions
+            Explore EzBill, S1Pro &amp; ProDevOpz Solutions
           </h2>
           <p className="text-xs text-foreground/60 leading-relaxed">
-            Discover EzBill billing software, custom web applications, and AI architectures engineered by Md Jalaluddin Master and the ProDevOpz engineering team.
+            Discover EzBill billing software, S1Pro workforce management, and custom AI architectures engineered by Md Jalaluddin Master and the ProDevOpz engineering team.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -343,6 +338,12 @@ export default function JalaluddinMasterPage() {
             className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
           >
             Explore EzBill
+          </Link>
+          <Link
+            href="/s1pro"
+            className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
+          >
+            Explore S1Pro
           </Link>
           <Link
             href="/"
