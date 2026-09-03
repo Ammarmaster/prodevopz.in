@@ -53,6 +53,73 @@ export async function verifyRegistrationOtp(email: string, code: string) {
   }
 }
 
+// 2b. Student Sign In OTP (for existing enrolled interns)
+export async function studentSignInOtp(email: string): Promise<{
+  success: boolean;
+  studentId?: string;
+  fallback?: boolean;
+  otpCode?: string;
+  error?: string;
+}> {
+  try {
+    const student = await db.student.findUnique({
+      where: { email },
+    });
+
+    if (!student) {
+      return {
+        success: false,
+        error: "No student profile found with this email. Please register first.",
+      };
+    }
+
+    const otpRes = await sendRegistrationOtp(email);
+    if (!otpRes.success) {
+      return { success: false, error: otpRes.error };
+    }
+    return {
+      success: true,
+      studentId: student.id,
+      fallback: otpRes.fallback,
+      otpCode: otpRes.otpCode,
+    };
+  } catch (error: any) {
+    console.error("Error in studentSignInOtp Server Action:", error);
+    return { success: false, error: error.message || "Failed to send sign-in OTP." };
+  }
+}
+
+// 2c. Verify Student Sign In OTP
+export async function verifyStudentSignInOtp(
+  email: string,
+  code: string
+): Promise<{
+  success: boolean;
+  studentId?: string;
+  studentName?: string;
+  error?: string;
+}> {
+  try {
+    const verifyRes = await verifyRegistrationOtp(email, code);
+    if (!verifyRes.success) {
+      return { success: false, error: verifyRes.error };
+    }
+
+    const student = await db.student.findUnique({
+      where: { email },
+    });
+
+    if (!student) {
+      return { success: false, error: "Student record not found." };
+    }
+
+    return { success: true, studentId: student.id, studentName: student.name };
+  } catch (error: any) {
+    console.error("Error in verifyStudentSignInOtp Server Action:", error);
+    return { success: false, error: error.message || "Sign-in verification failed." };
+  }
+}
+
 // 3. Register Student (called after successful OTP verification)
 export async function registerStudent(formData: {
   name: string;
@@ -425,7 +492,10 @@ export async function verifyRazorpayPaymentAction(
     }
 
     revalidatePath("/internship/dashboard");
-    return { success: true };
+    revalidatePath("/internship/certificate");
+    revalidatePath("/internship/lor");
+    revalidatePath("/verify-certificate");
+    return { success: true, studentId: updatedStudent.id, certificateId: updatedStudent.certificateId };
   } catch (error: any) {
     console.error("Error verifying Razorpay payment:", error);
     return { success: false, error: error.message || "Verification process failed." };

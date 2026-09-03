@@ -5,36 +5,56 @@ import QRCode from "qrcode";
 import PrintButton from "@/components/PrintButton";
 
 interface Props {
-  searchParams: Promise<{ studentId?: string }>;
+  searchParams: Promise<{ studentId?: string; id?: string; cert?: string }>;
 }
 
 export default async function CertificatePage({ searchParams }: Props) {
-  const { studentId } = await searchParams;
+  const params = await searchParams;
+  const lookupId = params.studentId || params.id || params.cert;
 
-  if (!studentId) {
+  if (!lookupId) {
     notFound();
   }
 
-  const student = await db.student.findUnique({
-    where: { id: studentId },
+  let student = await db.student.findUnique({
+    where: { id: lookupId },
   });
 
-  if (!student || student.status !== "COMPLETED") {
+  if (!student) {
+    student = await db.student.findUnique({
+      where: { certificateId: lookupId },
+    });
+  }
+
+  if (!student) {
+    student = await db.student.findUnique({
+      where: { internshipId: lookupId },
+    });
+  }
+
+  const isEligible =
+    student &&
+    (student.status === "COMPLETED" || student.paymentStatus === "COMPLETED");
+
+  if (!student || !isEligible) {
     return (
       <div className="max-w-md mx-auto text-center py-20 px-4">
-        <h2 className="text-xl font-bold text-white mb-2">Certificate Unlocked or Unavailable</h2>
+        <h2 className="text-xl font-bold text-white mb-2">Certificate Pending or Unavailable</h2>
         <p className="text-xs text-foreground/50 mb-6">
-          This certificate is only issued upon successful completion of all assigned internship modules and payment confirmation.
+          This certificate is generated upon successful completion of your internship modules and graduation confirmation.
         </p>
-        <Link href="/internship" className="px-4 py-2 rounded-xl bg-accent-orange text-white text-xs font-bold">
-          Back
+        <Link
+          href={student ? `/internship/dashboard?studentId=${student.id}` : "/internship"}
+          className="px-5 py-2.5 rounded-xl bg-accent-orange text-white text-xs font-bold"
+        >
+          {student ? "Go to Dashboard" : "Back to Portal"}
         </Link>
       </div>
     );
   }
 
   // Generate QR Code data URL dynamically
-  const verifyUrl = `https://prodevopz.in/verify-certificate?id=${student.certificateId}`;
+  const verifyUrl = `https://prodevopz.jobsio.in/verify-certificate?id=${student.certificateId}`;
   let qrCodeDataUrl = "";
   try {
     qrCodeDataUrl = await QRCode.toDataURL(verifyUrl, {

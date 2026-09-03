@@ -3,21 +3,38 @@ import { notFound } from "next/navigation";
 import PrintButton from "@/components/PrintButton";
 
 interface Props {
-  searchParams: Promise<{ studentId?: string }>;
+  searchParams: Promise<{ studentId?: string; id?: string; cert?: string }>;
 }
 
 export default async function LORPage({ searchParams }: Props) {
-  const { studentId } = await searchParams;
+  const params = await searchParams;
+  const lookupId = params.studentId || params.id || params.cert;
 
-  if (!studentId) {
+  if (!lookupId) {
     notFound();
   }
 
-  const student = await db.student.findUnique({
-    where: { id: studentId },
+  let student = await db.student.findUnique({
+    where: { id: lookupId },
   });
 
-  if (!student || student.status !== "COMPLETED") {
+  if (!student) {
+    student = await db.student.findUnique({
+      where: { certificateId: lookupId },
+    });
+  }
+
+  if (!student) {
+    student = await db.student.findUnique({
+      where: { internshipId: lookupId },
+    });
+  }
+
+  const isEligible =
+    student &&
+    (student.status === "COMPLETED" || student.paymentStatus === "COMPLETED");
+
+  if (!student || !isEligible) {
     notFound();
   }
 

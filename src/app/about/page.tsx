@@ -357,6 +357,27 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      {/* Student Internships & Community */}
+      <div className="glass-panel border-white/[0.08] p-8 md:p-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="flex flex-col gap-2 max-w-xl text-left">
+          <span className="text-xs font-bold text-accent-orange uppercase tracking-wider">
+            Talent &amp; Academic Outreach
+          </span>
+          <h2 className="font-display font-black text-2xl text-white">
+            Technical Internships for Students in India
+          </h2>
+          <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed">
+            We provide practical, project-based online internships for BTech, BE, BCA, and MCA students across India with verified MSME &amp; ISO certificates and signed LORs.
+          </p>
+        </div>
+        <Link
+          href="/internship"
+          className="px-6 py-3 rounded-xl bg-accent-orange hover:bg-accent-orange/90 text-white text-xs font-bold shadow-lg flex items-center gap-2 shrink-0 transition-all"
+        >
+          Explore Internships <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { Briefcase, MapPin, DollarSign, Send, Star, Compass } from "lucide-react";
+import Link from "next/link";
+import { Briefcase, MapPin, DollarSign, Send, Star, Compass, GraduationCap, ArrowRight } from "lucide-react";
 
 export default function Careers() {
   const jobs = [
@@ -127,6 +128,33 @@ export default function Careers() {
             </form>
           </div>
         </div>
+      </div>
+
+      {/* Student Internship Callout Banner */}
+      <div className="glass-panel border-accent-orange/20 bg-accent-orange/5 p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden text-left">
+        <div className="flex items-start gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-accent-orange/10 border border-accent-orange/20 flex items-center justify-center text-accent-orange shrink-0">
+            <GraduationCap className="w-6 h-6" />
+          </div>
+          <div>
+            <span className="text-[10px] font-bold text-accent-orange uppercase tracking-wider">
+              Student &amp; Fresher Programs
+            </span>
+            <h3 className="font-display font-bold text-lg text-white mt-0.5">
+              Looking for Technical Internships in India?
+            </h3>
+            <p className="text-xs text-foreground/60 mt-1 max-w-xl leading-relaxed">
+              Explore 100% remote project-based internships in Web Development, Full Stack, AI/ML, Cloud DevOps, and Cyber Security with verified MSME &amp; ISO 9001:2015 certificates and signed LORs.
+            </p>
+          </div>
+        </div>
+
+        <Link
+          href="/internship"
+          className="px-6 py-3 rounded-xl bg-accent-orange text-white text-xs font-bold shadow-lg hover:opacity-95 flex items-center gap-1.5 shrink-0 transition-opacity"
+        >
+          Explore Student Internships <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   );

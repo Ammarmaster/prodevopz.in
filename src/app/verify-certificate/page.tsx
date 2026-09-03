@@ -14,9 +14,20 @@ export default async function VerifyCertificate({ searchParams }: Props) {
 
   if (id) {
     searched = true;
+    const cleanId = id.trim();
     student = await db.student.findUnique({
-      where: { certificateId: id },
+      where: { certificateId: cleanId },
     });
+    if (!student) {
+      student = await db.student.findUnique({
+        where: { internshipId: cleanId },
+      });
+    }
+    if (!student) {
+      student = await db.student.findUnique({
+        where: { id: cleanId },
+      });
+    }
   }
 
   return (
