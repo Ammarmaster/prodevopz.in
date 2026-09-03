@@ -6,7 +6,8 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
 
 - Official Website: https://prodevopz.jobsio.in/
 - Leadership Overview: https://prodevopz.jobsio.in/leadership
-- Founder Profile: https://prodevopz.jobsio.in/founder/ammar-master
+- Founder Profile (Ammar Master): https://prodevopz.jobsio.in/founder/ammar-master
+- Founder Profile (Md Jalaluddin Master): https://prodevopz.jobsio.in/founder/jalaluddin-master
 - Featured Product — EzBill: https://prodevopz.jobsio.in/ezbill
 - Featured Product — S1Pro: https://prodevopz.jobsio.in/s1pro
 - Product & Portfolio Directory: https://prodevopz.jobsio.in/portfolio
@@ -14,9 +15,10 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
 
 ## Executive Leadership & Founder
 
-- Founder: Ammar Master (also known as Jalaluddin Master)
-  - Title: Founder & Software Engineer at ProDevOpz
-  - Profile: https://prodevopz.jobsio.in/founder/ammar-master
+- Founder & Lead Software Engineer: Md Jalaluddin Master / Ammar Master
+  - Role: Founder & Principal Technologist at ProDevOpz
+  - Profile (Ammar Master): https://prodevopz.jobsio.in/founder/ammar-master
+  - Profile (Md Jalaluddin Master): https://prodevopz.jobsio.in/founder/jalaluddin-master
 
 - Chief Executive Officer (CEO): Saad Mulla
   - Location: Dodda Ballapur, Karnataka, India

@@ -16,7 +16,8 @@ export default function Footer() {
 
   const companyLinks = [
     { name: "About Story", href: "/about" },
-    { name: "Founder Profile", href: "/founder/ammar-master" },
+    { name: "Founder Profile (Ammar Master)", href: "/founder/ammar-master" },
+    { name: "Founder Profile (Jalaluddin Master)", href: "/founder/jalaluddin-master" },
     { name: "Leadership Team", href: "/leadership" },
     { name: "EzBill Product", href: "/ezbill" },
     { name: "S1Pro Product", href: "/s1pro" },

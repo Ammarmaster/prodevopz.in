@@ -68,11 +68,34 @@ export default function About() {
           "@type": "Person",
           "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
           "name": "Ammar Master",
-          "alternateName": ["Jalaluddin Master"],
+          "alternateName": ["Jalaluddin Master", "Md Jalaluddin Master"],
           "jobTitle": "Founder & Software Engineer",
           "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
           "url": "https://prodevopz.jobsio.in/founder/ammar-master"
-        }
+        },
+        "member": [
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/saad-mulla#person",
+            "name": "Saad Mulla",
+            "jobTitle": "Chief Executive Officer (CEO)",
+            "url": "https://prodevopz.jobsio.in/leadership/saad-mulla"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh#person",
+            "name": "Ruvaid Shaikh",
+            "jobTitle": "Co-Founder",
+            "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle#person",
+            "name": "Vaibhav Yalamalle",
+            "jobTitle": "Managing Director (MD)",
+            "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle"
+          }
+        ]
       }
     ]
   };
@@ -168,13 +191,21 @@ export default function About() {
                 Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz. He leads technical architecture, systems engineering, and product development, creating robust web platforms, intelligent AI integrations, cloud infrastructures, and billing software like EzBill for businesses and startups.
               </p>
 
-              <div className="pt-1">
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/founder/ammar-master"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-4 py-2.5 rounded-xl transition-colors"
                 >
                   <UserCheck className="w-4 h-4 text-accent-orange" />
-                  View Founder Profile (Ammar Master)
+                  Founder Profile (Ammar Master)
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href="/founder/jalaluddin-master"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-4 py-2.5 rounded-xl transition-colors"
+                >
+                  <UserCheck className="w-4 h-4 text-accent-purple" />
+                  Founder Profile (Jalaluddin Master)
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

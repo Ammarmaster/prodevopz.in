@@ -11,18 +11,31 @@ import {
   ShieldCheck,
   ArrowRight,
   Award,
+  Globe,
   Mail,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Vaibhav Yalamalle — Managing Director at ProDevOpz | Leadership",
+  title: "Vaibhav Yalamalle — Managing Director at ProDevOpz | Executive Leadership",
   description:
     "Vaibhav Yalamalle is the Managing Director (MD) of ProDevOpz, overseeing enterprise governance, financial strategy, and business management.",
   alternates: {
     canonical: "/leadership/vaibhav-yalamalle",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Vaibhav Yalamalle — Managing Director at ProDevOpz | Leadership",
+    title: "Vaibhav Yalamalle — Managing Director at ProDevOpz | Executive Leadership",
     description:
       "Vaibhav Yalamalle is the Managing Director (MD) of ProDevOpz, overseeing enterprise governance, financial strategy, and business management.",
     url: "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle",
@@ -55,7 +68,7 @@ export default function VaibhavYalamallePage() {
         "@type": "ProfilePage",
         "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle",
         "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle",
-        "name": "Vaibhav Yalamalle — Managing Director at ProDevOpz | Leadership",
+        "name": "Vaibhav Yalamalle — Managing Director at ProDevOpz | Executive Leadership",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://prodevopz.jobsio.in/#website",
@@ -71,6 +84,7 @@ export default function VaibhavYalamallePage() {
         "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle#person",
         "name": "Vaibhav Yalamalle",
         "jobTitle": "Managing Director (MD)",
+        "description": "Vaibhav Yalamalle is the Managing Director (MD) of ProDevOpz, overseeing enterprise governance, financial strategy, and organizational management.",
         "worksFor": {
           "@type": "Organization",
           "@id": "https://prodevopz.jobsio.in/#organization",
@@ -79,13 +93,20 @@ export default function VaibhavYalamallePage() {
         },
         "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg",
         "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle",
-        "alumniOf": "KLE'S S.C.P Arts & D.D. Shirol Commerce College, Mahalingpur (PG)",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "KLE'S S.C.P Arts & D.D. Shirol Commerce College, Mahalingpur (PG)"
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Athani",
           "addressRegion": "Karnataka",
           "addressCountry": "IN"
         },
+        "sameAs": [
+          "https://linkedin.com/company/prodevopz",
+          "https://instagram.com/prodevopz.in"
+        ],
         "knowsAbout": [
           "Enterprise Governance",
           "Commercial & Business Management",
@@ -189,7 +210,9 @@ export default function VaibhavYalamallePage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs text-foreground/70 py-2 border-y border-white/[0.05]">
               <div className="flex items-center gap-1.5">
                 <Building className="w-4 h-4 text-accent-orange" />
-                <span>ProDevOpz Technologies</span>
+                <Link href="/" className="hover:text-white transition-colors">
+                  ProDevOpz Technologies
+                </Link>
               </div>
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-accent-purple" />
@@ -211,6 +234,16 @@ export default function VaibhavYalamallePage() {
               >
                 <Mail className="w-3.5 h-3.5" />
                 Contact Managing Director
+              </a>
+              <a
+                href="https://linkedin.com/company/prodevopz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold text-foreground/75 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2 rounded-xl border border-white/5 transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5 text-accent-blue" />
+                LinkedIn (ProDevOpz)
+                <ExternalLink className="w-3 h-3 text-foreground/40" />
               </a>
               <Link
                 href="/leadership"

@@ -401,13 +401,21 @@ export default function Home() {
                 Ammar Master (also known as Jalaluddin Master) is the Founder and Software Engineer behind ProDevOpz and the EzBill billing software suite. He leads technical architecture, system design, and AI engineering for startups and modern businesses.
               </p>
 
-              <div className="pt-1">
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/founder/ammar-master"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-5 py-3 rounded-xl transition-all"
                 >
                   <UserCheck className="w-4 h-4 text-accent-orange" />
-                  Meet Ammar Master, Founder of ProDevOpz
+                  Meet Ammar Master
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href="/founder/jalaluddin-master"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-5 py-3 rounded-xl transition-all"
+                >
+                  <UserCheck className="w-4 h-4 text-accent-purple" />
+                  Meet Jalaluddin Master
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

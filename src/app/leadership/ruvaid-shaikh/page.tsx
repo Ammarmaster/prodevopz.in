@@ -11,19 +11,32 @@ import {
   Code2,
   ArrowRight,
   Award,
+  Globe,
   Mail,
   ShieldCheck,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Ruvaid Shaikh — Co-Founder at ProDevOpz | Leadership",
+  title: "Ruvaid Shaikh — Co-Founder at ProDevOpz | Executive Leadership",
   description:
     "Ruvaid Shaikh is the Co-Founder of ProDevOpz, driving technology innovation, product engineering, and business expansion.",
   alternates: {
     canonical: "/leadership/ruvaid-shaikh",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Ruvaid Shaikh — Co-Founder at ProDevOpz | Leadership",
+    title: "Ruvaid Shaikh — Co-Founder at ProDevOpz | Executive Leadership",
     description:
       "Ruvaid Shaikh is the Co-Founder of ProDevOpz, driving technology innovation, product engineering, and business expansion.",
     url: "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh",
@@ -56,7 +69,7 @@ export default function RuvaidShaikhPage() {
         "@type": "ProfilePage",
         "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh",
         "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh",
-        "name": "Ruvaid Shaikh — Co-Founder at ProDevOpz | Leadership",
+        "name": "Ruvaid Shaikh — Co-Founder at ProDevOpz | Executive Leadership",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://prodevopz.jobsio.in/#website",
@@ -72,6 +85,7 @@ export default function RuvaidShaikhPage() {
         "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh#person",
         "name": "Ruvaid Shaikh",
         "jobTitle": "Co-Founder",
+        "description": "Ruvaid Shaikh is the Co-Founder of ProDevOpz, guiding technology innovation, product engineering, and scalable software ecosystems.",
         "worksFor": {
           "@type": "Organization",
           "@id": "https://prodevopz.jobsio.in/#organization",
@@ -80,13 +94,20 @@ export default function RuvaidShaikhPage() {
         },
         "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
         "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh",
-        "alumniOf": "Sanjay Ghodawat University (2022 - 2026)",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Sanjay Ghodawat University (2022 - 2026)"
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Sangli",
           "addressRegion": "Maharashtra",
           "addressCountry": "IN"
         },
+        "sameAs": [
+          "https://linkedin.com/company/prodevopz",
+          "https://instagram.com/prodevopz.in"
+        ],
         "knowsAbout": [
           "Software Co-Founding & Product Strategy",
           "Technology Systems & Web Architectures",
@@ -190,7 +211,9 @@ export default function RuvaidShaikhPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs text-foreground/70 py-2 border-y border-white/[0.05]">
               <div className="flex items-center gap-1.5">
                 <Building className="w-4 h-4 text-accent-orange" />
-                <span>ProDevOpz Technologies</span>
+                <Link href="/" className="hover:text-white transition-colors">
+                  ProDevOpz Technologies
+                </Link>
               </div>
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-accent-purple" />
@@ -212,6 +235,16 @@ export default function RuvaidShaikhPage() {
               >
                 <Mail className="w-3.5 h-3.5" />
                 Contact Co-Founder
+              </a>
+              <a
+                href="https://linkedin.com/company/prodevopz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold text-foreground/75 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2 rounded-xl border border-white/5 transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5 text-accent-blue" />
+                LinkedIn (ProDevOpz)
+                <ExternalLink className="w-3 h-3 text-foreground/40" />
               </a>
               <Link
                 href="/leadership"
@@ -237,7 +270,7 @@ export default function RuvaidShaikhPage() {
             Ruvaid Shaikh is the Co-Founder of ProDevOpz. As a key executive and technical stakeholder, Ruvaid helps guide product strategy, system architecture, and modern tech stack decisions across enterprise software builds.
           </p>
           <p>
-            Hailing from Sangli, Maharashtra, and studying at Sanjay Ghodawat University (2022 – 2026), Ruvaid combines technical acumen with entrepreneurial drive. He collaborates directly with company leadership to expand ProDevOpz&apos;s product offerings and mentorship platforms.
+            Hailing from Sangli, Maharashtra, and studying at Sanjay Ghodawat University (2022 – 2026), Ruvaid combines technical acumen with entrepreneurial drive. He collaborates directly with company leadership to expand ProDevOpz&apos;s product offerings, client engineering solutions, and developer talent initiatives.
           </p>
         </div>
       </section>
