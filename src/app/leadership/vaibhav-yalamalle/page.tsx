@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg",
-        width: 800,
-        height: 1000,
+        url: "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-of-prodevopz.jpg",
+        width: 1024,
+        height: 819,
         alt: "Vaibhav Yalamalle, Managing Director of ProDevOpz",
       },
     ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Vaibhav Yalamalle — Managing Director at ProDevOpz",
     description:
       "Vaibhav Yalamalle is the Managing Director (MD) of ProDevOpz.",
-    images: ["https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg"],
+    images: ["https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-of-prodevopz.jpg"],
   },
 };
 
@@ -91,7 +91,7 @@ export default function VaibhavYalamallePage() {
           "name": "ProDevOpz",
           "url": "https://prodevopz.jobsio.in/"
         },
-        "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-of-prodevopz.jpg",
         "url": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle",
         "alumniOf": {
           "@type": "EducationalOrganization",
@@ -171,13 +171,13 @@ export default function VaibhavYalamallePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
           {/* Photo Column */}
           <div className="lg:col-span-4 flex flex-col items-center">
-            <figure className="relative w-full max-w-[260px] sm:max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
+            <figure className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
               <Image
-                src="/team/vaibhav-yalamalle-md-prodevopz.jpg"
+                src="/team/vaibhav-yalamalle-md-of-prodevopz.jpg"
                 alt="Vaibhav Yalamalle, Managing Director of ProDevOpz"
                 fill
                 priority
-                sizes="(max-width: 768px) 260px, 280px"
+                sizes="(max-width: 768px) 280px, 320px"
                 className="object-cover object-top hover:scale-105 transition-transform duration-500"
               />
             </figure>

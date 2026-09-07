@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: "https://prodevopz.jobsio.in/team/saad-mulla-ceo-prodevopz.jpg",
+        url: "https://prodevopz.jobsio.in/team/saad-mulla-ceo-of-prodevopz.jpg",
         width: 800,
         height: 1000,
         alt: "Saad Mulla, CEO of ProDevOpz",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Saad Mulla — CEO at ProDevOpz",
     description:
       "Saad Mulla is the Chief Executive Officer (CEO) of ProDevOpz.",
-    images: ["https://prodevopz.jobsio.in/team/saad-mulla-ceo-prodevopz.jpg"],
+    images: ["https://prodevopz.jobsio.in/team/saad-mulla-ceo-of-prodevopz.jpg"],
   },
 };
 
@@ -92,7 +92,7 @@ export default function SaadMullaPage() {
           "name": "ProDevOpz",
           "url": "https://prodevopz.jobsio.in/"
         },
-        "image": "https://prodevopz.jobsio.in/team/saad-mulla-ceo-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/saad-mulla-ceo-of-prodevopz.jpg",
         "url": "https://prodevopz.jobsio.in/leadership/saad-mulla",
         "alumniOf": {
           "@type": "EducationalOrganization",
@@ -175,7 +175,7 @@ export default function SaadMullaPage() {
           <div className="lg:col-span-4 flex flex-col items-center">
             <figure className="relative w-full max-w-[260px] sm:max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
               <Image
-                src="/team/saad-mulla-ceo-prodevopz.jpg"
+                src="/team/saad-mulla-ceo-of-prodevopz.jpg"
                 alt="Saad Mulla, CEO of ProDevOpz"
                 fill
                 priority

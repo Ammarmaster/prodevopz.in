@@ -159,7 +159,7 @@ export default function Home() {
         "@id": "https://prodevopz.jobsio.in/leadership/saad-mulla#person",
         "name": "Saad Mulla",
         "jobTitle": "Chief Executive Officer (CEO)",
-        "image": "https://prodevopz.jobsio.in/team/saad-mulla-ceo-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/saad-mulla-ceo-of-prodevopz.jpg",
         "worksFor": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -170,7 +170,7 @@ export default function Home() {
         "@id": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh#person",
         "name": "Ruvaid Shaikh",
         "jobTitle": "Co-Founder",
-        "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg",
         "worksFor": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -181,7 +181,7 @@ export default function Home() {
         "@id": "https://prodevopz.jobsio.in/leadership/vaibhav-yalamalle#person",
         "name": "Vaibhav Yalamalle",
         "jobTitle": "Managing Director (MD)",
-        "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/vaibhav-yalamalle-md-of-prodevopz.jpg",
         "worksFor": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
@@ -475,7 +475,7 @@ export default function Home() {
                 role: "Chief Executive Officer (CEO)",
                 location: "Dodda Ballapur, Karnataka",
                 education: "Rani Channamma University (RCUB)",
-                image: "/team/saad-mulla-ceo-prodevopz.jpg",
+                image: "/team/saad-mulla-ceo-of-prodevopz.jpg",
                 alt: "Saad Mulla, CEO of ProDevOpz",
                 slug: "saad-mulla",
                 badge: "text-accent-orange bg-accent-orange/10 border-accent-orange/20",
@@ -485,7 +485,7 @@ export default function Home() {
                 role: "Co-Founder",
                 location: "Sangli, Maharashtra",
                 education: "Sanjay Ghodawat University",
-                image: "/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+                image: "/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg",
                 alt: "Ruvaid Shaikh, Co-Founder of ProDevOpz",
                 slug: "ruvaid-shaikh",
                 badge: "text-accent-purple bg-accent-purple/10 border-accent-purple/20",
@@ -495,7 +495,7 @@ export default function Home() {
                 role: "Managing Director (MD)",
                 location: "Athani, Karnataka",
                 education: "KLE'S S.C.P Arts & D.D. Shirol PG College",
-                image: "/team/vaibhav-yalamalle-md-prodevopz.jpg",
+                image: "/team/vaibhav-yalamalle-md-of-prodevopz.jpg",
                 alt: "Vaibhav Yalamalle, Managing Director of ProDevOpz",
                 slug: "vaibhav-yalamalle",
                 badge: "text-accent-blue bg-accent-blue/10 border-accent-blue/20",

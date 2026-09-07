@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+        url: "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg",
         width: 1024,
         height: 1007,
         alt: "Ruvaid Shaikh, Co-Founder of ProDevOpz",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Ruvaid Shaikh — Co-Founder at ProDevOpz",
     description:
       "Ruvaid Shaikh is the Co-Founder of ProDevOpz.",
-    images: ["https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg"],
+    images: ["https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg"],
   },
 };
 
@@ -92,7 +92,7 @@ export default function RuvaidShaikhPage() {
           "name": "ProDevOpz",
           "url": "https://prodevopz.jobsio.in/"
         },
-        "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-prodevopz.jpg",
+        "image": "https://prodevopz.jobsio.in/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg",
         "url": "https://prodevopz.jobsio.in/leadership/ruvaid-shaikh",
         "alumniOf": {
           "@type": "EducationalOrganization",
@@ -174,7 +174,7 @@ export default function RuvaidShaikhPage() {
           <div className="lg:col-span-4 flex flex-col items-center">
             <figure className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02]">
               <Image
-                src="/team/ruvaid-shaikh-cofounder-prodevopz.jpg"
+                src="/team/ruvaid-shaikh-cofounder-of-prodevopz.jpg"
                 alt="Ruvaid Shaikh, Co-Founder of ProDevOpz"
                 fill
                 priority
