@@ -92,7 +92,8 @@ export default function Home() {
         "sameAs": [
           "https://linkedin.com/company/prodevopz",
           "https://instagram.com/prodevopz.in",
-          "https://github.com/Ammarmaster"
+          "https://github.com/Ammarmaster",
+          "https://x.com/Ammarmaster_"
         ],
         "founder": {
           "@type": "Person",
@@ -152,7 +153,11 @@ export default function Home() {
         "worksFor": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },
-        "url": "https://prodevopz.jobsio.in/founder/ammar-master"
+        "url": "https://prodevopz.jobsio.in/founder/ammar-master",
+        "sameAs": [
+          "https://x.com/Ammarmaster_",
+          "https://github.com/Ammarmaster"
+        ]
       },
       {
         "@type": "Person",
@@ -208,12 +213,35 @@ export default function Home() {
         "@type": "SoftwareApplication",
         "@id": "https://prodevopz.jobsio.in/s1pro#software",
         "name": "S1Pro",
-        "alternateName": ["S1Pro Software", "S1 Pro", "S1Pro Field Service Platform"],
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, Android, iOS, Cloud",
-        "description": "S1Pro is a field service management platform developed by ProDevOpz for managing customers, service professionals, bookings, jobs and service operations.",
+        "alternateName": ["S1Pro Silent App", "S1 Pro", "S1Pro Auto Mobile Silent Profiler"],
+        "applicationCategory": "MobileApplication",
+        "operatingSystem": "Android, iOS, Mobile",
+        "description": "S1Pro is an automated mobile silent and DND profiler app developed by ProDevOpz. It automatically silences smartphones when entering added target areas and ranges (mosques, colleges, offices, hospitals) and seamlessly restores sound upon exit.",
         "url": "https://prodevopz.jobsio.in/s1pro",
         "image": "https://prodevopz.jobsio.in/products/s1pro-app-icon.png",
+        "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        },
+        "creator": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://prodevopz.jobsio.in/sql-compiler#software",
+        "name": "SQLite Studio",
+        "alternateName": [
+          "Online SQL Compiler",
+          "Free Online SQL Compiler",
+          "SQL ER Diagram Visualizer",
+          "SQLite WebAssembly IDE"
+        ],
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web, Browser, Cloud",
+        "description": "Free in-browser online SQL compiler and interactive database schema ER diagram visualizer powered by SQLite WebAssembly. Execute queries locally with zero latency, inspect foreign key relationships, and export datasets to CSV/JSON.",
+        "url": "https://prodevopz.jobsio.in/sql-compiler",
+        "sameAs": "https://sqlcompiler.jobsio.in/",
+        "image": "https://prodevopz.jobsio.in/products/sql-compiler-app-icon.jpg",
         "author": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         },

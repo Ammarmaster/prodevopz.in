@@ -10,6 +10,7 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
 - Founder Profile (Md Jalaluddin Master): https://prodevopz.jobsio.in/founder/jalaluddin-master
 - Featured Product — EzBill: https://prodevopz.jobsio.in/ezbill
 - Featured Product — S1Pro: https://prodevopz.jobsio.in/s1pro
+- Featured Product — SQLite Studio (SQL Compiler): https://prodevopz.jobsio.in/sql-compiler
 - Product & Portfolio Directory: https://prodevopz.jobsio.in/portfolio
 - Founder Official Photograph: https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg
 
@@ -17,6 +18,8 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
 
 - Founder & Lead Software Engineer: Md Jalaluddin Master / Ammar Master
   - Role: Founder & Principal Technologist at ProDevOpz
+  - X (Twitter): https://x.com/Ammarmaster_
+  - GitHub: https://github.com/Ammarmaster
   - Profile (Ammar Master): https://prodevopz.jobsio.in/founder/ammar-master
   - Profile (Md Jalaluddin Master): https://prodevopz.jobsio.in/founder/jalaluddin-master
 
@@ -43,9 +46,17 @@ ProDevOpz (ProDevOpz Technologies) is a custom software development company, tec
   - App Icon: https://prodevopz.jobsio.in/products/ezbill-app-icon.png
 
 - S1Pro:
-  - Description: Field service workforce management platform connecting customers, service professionals/technicians, and business administrators. Features service discovery, instant appointment booking, real-time job tracking, direct communication, technician profiles, and dispatch command center.
+  - Description: Automated mobile silent mode and DND profiler app engineered by ProDevOpz. Automatically silences smartphones upon entering added target areas and radius ranges (such as mosques, temples, classrooms, offices, hospitals) and seamlessly restores sound profiles upon exiting. Features zero-drain background geofencing and VIP caller exceptions.
   - URL: https://prodevopz.jobsio.in/s1pro
   - App Icon: https://prodevopz.jobsio.in/products/s1pro-app-icon.png
+
+- SQLite Studio (Free Online SQL Compiler & ER Diagram Visualizer):
+  - Description: Free in-browser online SQL compiler and interactive database schema ER diagram visualizer powered by SQLite 3 WebAssembly (WASM). Features 0ms server latency, automatic foreign key relationship diagrams, line-by-line gutter execution, 100% client-side privacy, and 1-click CSV/JSON export.
+  - ProDevOpz Showcase: https://prodevopz.jobsio.in/sql-compiler
+  - Live Application: https://sqlcompiler.jobsio.in/
+  - Studio IDE App: https://sqlcompiler.jobsio.in/app
+  - ER Visualizer Feature: https://sqlcompiler.jobsio.in/features/er-diagram-visualizer
+  - App Icon: https://prodevopz.jobsio.in/products/sql-compiler-app-icon.jpg
 
 ## Primary Services
 

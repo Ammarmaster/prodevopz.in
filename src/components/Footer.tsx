@@ -6,6 +6,7 @@ export default function Footer() {
 
   const services = [
     { name: "EzBill Billing Software", href: "/ezbill" },
+    { name: "SQLite Studio (SQL Compiler)", href: "/sql-compiler" },
     { name: "AI Development", href: "/services/ai-development" },
     { name: "Mobile App Development", href: "/services/mobile-development" },
     { name: "Web App Development", href: "/services/web-development" },
@@ -21,6 +22,7 @@ export default function Footer() {
     { name: "Leadership Team", href: "/leadership" },
     { name: "EzBill Product", href: "/ezbill" },
     { name: "S1Pro Product", href: "/s1pro" },
+    { name: "SQLite Studio Product", href: "/sql-compiler" },
     { name: "Project Portfolio", href: "/portfolio" },
     { name: "Pricing Estimate", href: "/pricing" },
     { name: "Tech Blog", href: "/blog" },
@@ -132,6 +134,14 @@ export default function Footer() {
               className="text-xs font-semibold text-foreground/60 hover:text-white transition-colors bg-white/[0.03] hover:bg-white/[0.08] px-3 py-1.5 rounded-lg border border-white/5"
             >
               LinkedIn
+            </a>
+            <a
+              href="https://x.com/Ammarmaster_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-semibold text-foreground/60 hover:text-white transition-colors bg-white/[0.03] hover:bg-white/[0.08] px-3 py-1.5 rounded-lg border border-white/5"
+            >
+              X (@Ammarmaster_)
             </a>
           </div>
         </div>

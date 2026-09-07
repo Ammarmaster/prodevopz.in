@@ -7,14 +7,14 @@ import { ArrowUpRight, Zap, Smartphone, Cpu, ArrowRight, Layers, ShieldCheck, Ch
 export const metadata: Metadata = {
   title: "Products & Software Portfolio | ProDevOpz",
   description:
-    "Explore flagship software products and custom systems engineered by ProDevOpz, including EzBill billing software, S1Pro field service management, and AI architectures.",
+    "Explore flagship software products and custom systems engineered by ProDevOpz, including EzBill billing software, S1Pro auto mobile silent profiler, SQLite Studio online SQL compiler, and AI architectures.",
   alternates: {
     canonical: "/portfolio",
   },
   openGraph: {
     title: "Products & Software Portfolio | ProDevOpz",
     description:
-      "Explore flagship software products and custom systems engineered by ProDevOpz, including EzBill billing software, S1Pro field service management, and AI architectures.",
+      "Explore flagship software products and custom systems engineered by ProDevOpz, including EzBill billing software, S1Pro auto mobile silent profiler, SQLite Studio online SQL compiler, and AI architectures.",
     url: "https://prodevopz.jobsio.in/portfolio",
     siteName: "ProDevOpz",
     locale: "en_IN",
@@ -48,18 +48,34 @@ export default function Portfolio() {
     },
     {
       title: "S1Pro",
-      tagline: "Field Service Workforce Management Platform",
-      desc: "Comprehensive workforce platform connecting customers, service professionals, and business administrators. Streamlines service discovery, instant booking, live tracking, and dispatch operations.",
+      tagline: "Auto Mobile Silent App by Target Area & Range",
+      desc: "Smart mobile automation tool engineered by ProDevOpz. Automatically silences your smartphone ringer when entering added target locations (mosques, colleges, offices, hospitals) and seamlessly un-mutes upon exit.",
       icon: "/products/s1pro-app-icon.png",
-      alt: "S1Pro field service management app icon",
+      alt: "S1Pro auto mobile silent app icon",
       href: "/s1pro",
-      category: "Field Service & Workforce",
-      tech: ["Next.js", "React Native", "WebSockets", "Cloud APIs", "GPS Tracking"],
+      category: "Mobile Utility & Geofencing",
+      tech: ["Android Native", "Fused Geofencing", "WorkManager", "Kotlin", "GPS APIs"],
       badgeColor: "text-accent-blue bg-accent-blue/10 border-accent-blue/20",
       features: [
-        "Customer Booking & Issue Descriptions",
-        "Live Technician Tracking & Dispatch",
-        "Technician Profiles & Rating Records",
+        "Auto Silent in Target Area & Range",
+        "Automatic Ringtone Restore on Exit",
+        "Zero-Drain Background Geofencing",
+      ],
+    },
+    {
+      title: "SQLite Studio",
+      tagline: "Free Online SQL Compiler & ER Diagram Visualizer",
+      desc: "Browser-native SQL IDE powered by SQLite WebAssembly. Execute queries with 0ms server latency, auto-generate interactive database schema ER diagrams, and export data with 100% privacy.",
+      icon: "/products/sql-compiler-app-icon.jpg",
+      alt: "SQLite Studio Online SQL Compiler app icon",
+      href: "/sql-compiler",
+      category: "Developer Tools & Database",
+      tech: ["SQLite 3 WASM", "Next.js", "WebAssembly", "Tailwind CSS", "Monaco"],
+      badgeColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+      features: [
+        "In-Browser 0ms Latency SQL Engine",
+        "Interactive Schema & ER Visualizer",
+        "Line-by-Line Gutter Execution",
       ],
     },
   ];
@@ -112,7 +128,7 @@ export default function Portfolio() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {flagshipProducts.map((prod, i) => (
             <div
               key={i}

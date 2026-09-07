@@ -63,7 +63,13 @@ export default function About() {
         "legalName": "ProDevOpz Technologies",
         "url": "https://prodevopz.jobsio.in/",
         "logo": "https://prodevopz.jobsio.in/logo.jpg",
-        "description": "ProDevOpz is a certified MSME and ISO-compliant software development company providing web development, mobile apps, cloud DevOps, AI engineering, and products like EzBill.",
+        "description": "ProDevOpz is a certified MSME and ISO-compliant software development company providing web development, mobile apps, cloud DevOps, AI engineering, and products like EzBill, S1Pro, and SQLite Studio.",
+        "sameAs": [
+          "https://linkedin.com/company/prodevopz",
+          "https://instagram.com/prodevopz.in",
+          "https://github.com/Ammarmaster",
+          "https://x.com/Ammarmaster_"
+        ],
         "founder": {
           "@type": "Person",
           "@id": "https://prodevopz.jobsio.in/founder/ammar-master#person",
@@ -71,7 +77,11 @@ export default function About() {
           "alternateName": ["Jalaluddin Master", "Md Jalaluddin Master"],
           "jobTitle": "Founder & Software Engineer",
           "image": "https://prodevopz.jobsio.in/ammar-master-jalaluddin-master-founder-prodevopz.jpg",
-          "url": "https://prodevopz.jobsio.in/founder/ammar-master"
+          "url": "https://prodevopz.jobsio.in/founder/ammar-master",
+          "sameAs": [
+            "https://x.com/Ammarmaster_",
+            "https://github.com/Ammarmaster"
+          ]
         },
         "member": [
           {

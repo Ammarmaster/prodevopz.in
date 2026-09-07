@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/founder/jalaluddin-master",
     "/ezbill",
     "/s1pro",
+    "/sql-compiler",
     "/portfolio",
     "/pricing",
     "/blog",
@@ -33,6 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "daily" : "weekly",
-    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/s1pro" || route === "/internship" || route.startsWith("/founder") || route.startsWith("/leadership") ? 0.9 : 0.7,
+    priority: route === "" ? 1.0 : route.startsWith("/services") || route === "/ezbill" || route === "/s1pro" || route === "/sql-compiler" || route === "/internship" || route.startsWith("/founder") || route.startsWith("/leadership") ? 0.9 : 0.7,
   }));
 }

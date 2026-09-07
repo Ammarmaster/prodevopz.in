@@ -196,6 +196,13 @@ export default function EzBillPage() {
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
+              href="/sql-compiler"
+              className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
+            >
+              Explore SQLite Studio
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
               href="/founder/ammar-master"
               className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] px-4 py-2.5 rounded-xl border border-white/5 transition-colors"
             >

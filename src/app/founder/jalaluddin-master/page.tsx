@@ -104,7 +104,8 @@ export default function JalaluddinMasterPage() {
         },
         "sameAs": [
           "https://linkedin.com/company/prodevopz",
-          "https://instagram.com/prodevopz.in"
+          "https://instagram.com/prodevopz.in",
+          "https://x.com/Ammarmaster_"
         ],
         "knowsAbout": [
           "Software Engineering",
@@ -114,6 +115,8 @@ export default function JalaluddinMasterPage() {
           "Next.js & React",
           "TypeScript & Node.js",
           "EzBill Billing Software Development",
+          "S1Pro Mobile Automation Development",
+          "SQLite Studio WebAssembly Development",
           "Enterprise Systems Design"
         ]
       },
@@ -134,6 +137,27 @@ export default function JalaluddinMasterPage() {
         "name": "EzBill",
         "alternateName": ["EZBill", "EZ Bill"],
         "url": "https://prodevopz.jobsio.in/ezbill",
+        "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://prodevopz.jobsio.in/s1pro#software",
+        "name": "S1Pro",
+        "alternateName": ["S1Pro Auto Mobile Silent Profiler", "S1 Pro"],
+        "url": "https://prodevopz.jobsio.in/s1pro",
+        "author": {
+          "@id": "https://prodevopz.jobsio.in/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://prodevopz.jobsio.in/sql-compiler#software",
+        "name": "SQLite Studio",
+        "alternateName": ["Online SQL Compiler", "SQL ER Diagram Visualizer"],
+        "url": "https://prodevopz.jobsio.in/sql-compiler",
+        "sameAs": "https://sqlcompiler.jobsio.in/",
         "author": {
           "@id": "https://prodevopz.jobsio.in/#organization"
         }
@@ -288,7 +312,7 @@ export default function JalaluddinMasterPage() {
             With extensive hands-on expertise in full-stack web development, DevOps automation, and applied artificial intelligence, Md Jalaluddin Master oversees technical standards, database architectures, and production reliability across all software deliverables.
           </p>
           <p>
-            Under his leadership, ProDevOpz has launched bespoke web applications, mobile platforms, and software products including <Link href="/ezbill" className="text-accent-orange hover:underline font-semibold">EzBill (EZBill)</Link> and <Link href="/s1pro" className="text-accent-blue hover:underline font-semibold">S1Pro</Link>, adhering to registered MSME and ISO-compliant engineering benchmarks.
+            Under his leadership, ProDevOpz has launched bespoke web applications, mobile platforms, and software products including <Link href="/ezbill" className="text-accent-orange hover:underline font-semibold">EzBill (EZBill)</Link>, <Link href="/s1pro" className="text-accent-blue hover:underline font-semibold">S1Pro (Auto Mobile Silent)</Link>, and <Link href="/sql-compiler" className="text-emerald-400 hover:underline font-semibold">SQLite Studio</Link>, adhering to registered MSME and ISO-compliant engineering benchmarks.
           </p>
         </div>
       </section>
@@ -326,10 +350,10 @@ export default function JalaluddinMasterPage() {
             Featured Products &amp; Services
           </span>
           <h2 className="font-display font-bold text-lg text-white">
-            Explore EzBill, S1Pro &amp; ProDevOpz Solutions
+            Explore EzBill, S1Pro &amp; SQLite Studio
           </h2>
           <p className="text-xs text-foreground/60 leading-relaxed">
-            Discover EzBill billing software, S1Pro workforce management, and custom AI architectures engineered by Md Jalaluddin Master and the ProDevOpz engineering team.
+            Discover EzBill billing software, S1Pro auto mobile silent profiler, SQLite Studio online SQL compiler, and custom AI architectures engineered by Md Jalaluddin Master and the ProDevOpz engineering team.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -344,6 +368,12 @@ export default function JalaluddinMasterPage() {
             className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
           >
             Explore S1Pro
+          </Link>
+          <Link
+            href="/sql-compiler"
+            className="text-xs font-semibold text-foreground/80 hover:text-white px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] transition-colors"
+          >
+            SQLite Studio
           </Link>
           <Link
             href="/"
